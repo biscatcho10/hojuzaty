@@ -6,16 +6,16 @@ use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Modules\Settings\Entities\ContactUs;
+use Yajra\DataTables\Facades\DataTables;
 
 class ContactUsController extends Controller
 {
     /**
      * Display a listing of the resource.
-     * @return Renderable
      */
-    public function index()
+    public function index(Request $request)
     {
-        $data = ContactUs::paginate(10);
+        $data = ContactUs::latest()->paginate(10);
         return view('settings::contact-us.index', compact('data'));
     }
 
@@ -34,7 +34,6 @@ class ContactUsController extends Controller
     /**
      * Remove the specified resource from storage.
      * @param int $id
-     * @return Renderable
      */
     public function destroy($id)
     {

@@ -12,8 +12,6 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\HtmlString;
 use Laraeast\LaravelSettings\Facades\Settings;
-use Mail;
-use Modules\Settings\Emails\SubscribeMail;
 use Modules\Settings\Http\Requests\SettingRequest;
 use Modules\Settings\Notifications\TestMail;
 use Notification;
@@ -79,7 +77,10 @@ class SettingController extends Controller
         }
 
         foreach ($this->files as $file) {
-            Settings::set($file)->addAllMediaFromTokens([], $file);
+            if ($request->hasFile($file)) {
+                Settings::instance($file)->clearMediaCollection($file);
+                Settings::instance($file)->addMediaFromRequest($file)->toMediaCollection($file);
+            }
         }
 
         $this->changeEnvironmentVariable('MAIL_MAILER', Settings::get('mail_driver'));

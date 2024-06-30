@@ -37,8 +37,13 @@ Route::middleware('dashboard')->prefix('dashboard')->as('dashboard.')->group(fun
     // map two routes
     Route::get('map-two', 'Dashboard\AboutUsController@map2')->name('map2');
 
-    // award route
-    Route::resource('awards', 'Dashboard\AwardController');
+
+    // Contact Requests
+    Route::get('contact-requests', 'Dashboard\ContactRequestController@index')->name('contact-requests');
+
+    // pages route
+    Route::get('pages', 'Dashboard\PagesController@form')->name('pages');
+    Route::put('pages', 'Dashboard\PagesController@update')->name('pages.update');
 });
 
 Route::post('ckeditor/image_upload', 'Dashboard\SettingController@upload')->name('image.upload');

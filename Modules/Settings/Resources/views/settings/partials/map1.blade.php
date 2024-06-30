@@ -10,15 +10,15 @@
 
 
 <div class="card-body">
-    @if (($about->latitude1 != null) & ($about->longitude1 != null))
+    @if ((Settings::get('latitude1') != null) & (Settings::get('longitude1') != null))
         <div class="form-group">
             <label for="address_address">
                 {{ __('Map Address') }}
             </label>
             <input type="text" id="address-input" name="map_address1" class="form-control map-input"
-                value="{{ $about->map_address1 }}">
-            <input type="hidden" name="latitude1" id="address-latitude" value="{{ $about->latitude1 }}" />
-            <input type="hidden" name="longitude1" id="address-longitude" value="{{ $about->longitude1 }}" />
+                value="{{ Settings::get('map_address1') }}">
+            <input type="hidden" name="latitude1" id="address-latitude" value="{{ Settings::get('latitude1') }}" />
+            <input type="hidden" name="longitude1" id="address-longitude" value="{{ Settings::get('longitude1') }}" />
         </div>
         <div id="address-map-container" style="width:100%;height:400px; ">
             <div style="width: 100%; height: 100%" id="address-map"></div>

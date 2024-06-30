@@ -29,6 +29,13 @@
         ->attribute(['data-parsley-type' => 'url','data-parsley-minlength' => '3'])
         ->note(trans('settings::settings.notes.social_instagram'))
         }}
+{{ BsForm::text('behance')
+        ->value(Settings::get('behance'))
+        ->attribute('pattern','https://.*')
+        ->placeholder("https://behance.net")
+        ->attribute(['data-parsley-type' => 'url','data-parsley-minlength' => '3'])
+        ->note(trans('settings::settings.notes.social_behance'))
+        }}
 {{ BsForm::text('youtube')
         ->value(Settings::get('youtube'))
         ->attribute('pattern','https://.*')

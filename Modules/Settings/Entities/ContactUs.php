@@ -2,6 +2,7 @@
 
 namespace Modules\Settings\Entities;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -37,9 +38,5 @@ class ContactUs extends Model
         return ucfirst($value);
     }
 
-    // public function getCreatedAtAttribute($value)
-    // {
-    //     return time_difference($value);
-    // }
 
 }

@@ -21,6 +21,7 @@ return [
         'email' => 'Email',
         'phone' => 'Phone Number',
         'message' => 'Message',
+        'created_at' => 'Creation Date',
     ],
     'messages' => [
         'deleted' => 'Message deleted successfully.',

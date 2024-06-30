@@ -39,6 +39,7 @@ return [
     'attributes' => [
         'facebook' => 'Facebook',
         'twitter' => 'Twitter',
+        'behance' => 'Behance',
         'instagram' => 'Instagram',
         'youtube' => 'Youtube',
         'linkedin' => 'Linked in',

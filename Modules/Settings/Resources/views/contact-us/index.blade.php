@@ -8,7 +8,7 @@
     @component('dashboard::layouts.components.page')
         @slot('title', trans('settings::contactus.plural'))
         @slot('breadcrumbs', ['dashboard.contactus.index'])
-
+        {{-- @include('dashboard::layouts.apps.datatables') --}}
         @if (session('success'))
             <div class="alert alert-success" role="alert">
                 {{ session('success') }}
@@ -22,7 +22,8 @@
                     <th>@lang('settings::contactus.attributes.name')</th>
                     <th>@lang('settings::contactus.attributes.email')</th>
                     <th>@lang('settings::contactus.attributes.phone')</th>
-                    <th>@lang('settings::contactus.attributes.message')</th>
+                    {{-- <th>@lang('settings::contactus.attributes.message')</th> --}}
+                    <th>@lang('settings::contactus.attributes.created_at')</th>
                     <th style="width: 160px">...</th>
                 </tr>
             </thead>
@@ -38,8 +39,11 @@
                         <td class="d-none d-md-table-cell">
                             {{ $contact->phone }}
                         </td>
-                        <td class="d-none d-md-table-cell">
-                            {{ $contact->message }}
+                        {{-- <td class="d-none d-md-table-cell">
+                            {{ Str::limit($contact->message, 100, '...') }}
+                        </td> --}}
+                         <td class="d-none d-md-table-cell">
+                            {{ Carbon\Carbon::parse($contact->created_at)->format('d-m-Y') }}
                         </td>
 
                         <td style="width: 160px">

@@ -34,84 +34,16 @@ class Setting extends BaseSettingModel implements HasMedia
      */
     public function registerMediaCollections(): void
     {
-        $this
-            ->addMediaCollection('logo')
-            ->singleFile()
-            ->registerMediaConversions(function () {
-                $this->addMediaConversion('thumb')
-                    ->width(50);
+        $this->addMediaCollection('logo')->singleFile();
 
-                $this->addMediaConversion('small')
-                    ->width(120);
+        $this->addMediaCollection('favicon')->singleFile();
 
-                $this->addMediaConversion('medium')
-                    ->width(160);
+        $this->addMediaCollection('loginLogo')->singleFile();
 
-                $this->addMediaConversion('large')
-                    ->width(320);
+        $this->addMediaCollection('loginBackground')->singleFile();
 
-                $this->addMediaConversion('extra_large')
-                    ->width(720);
-            });
+        $this->addMediaCollection('slider_video')->singleFile();
 
-        $this
-            ->addMediaCollection('favicon')
-            ->singleFile()
-            ->registerMediaConversions(function () {
-                $this->addMediaConversion('thumb')
-                    ->width(50);
-
-                $this->addMediaConversion('small')
-                    ->width(120);
-
-                $this->addMediaConversion('medium')
-                    ->width(160);
-
-                $this->addMediaConversion('large')
-                    ->width(320);
-
-                $this->addMediaConversion('extra_large')
-                    ->width(720);
-            });
-
-        $this
-            ->addMediaCollection('loginLogo')
-            ->singleFile()
-            ->registerMediaConversions(function () {
-                $this->addMediaConversion('thumb')
-                    ->width(50);
-
-                $this->addMediaConversion('small')
-                    ->width(120);
-
-                $this->addMediaConversion('medium')
-                    ->width(160);
-
-                $this->addMediaConversion('large')
-                    ->width(320);
-
-                $this->addMediaConversion('extra_large')
-                    ->width(720);
-            });
-
-        $this
-            ->addMediaCollection('loginBackground')
-            ->singleFile()
-            ->registerMediaConversions(function () {
-                $this->addMediaConversion('thumb')
-                    ->width(50);
-
-                $this->addMediaConversion('small')
-                    ->width(120);
-
-                $this->addMediaConversion('medium')
-                    ->width(160);
-
-                $this->addMediaConversion('large')
-                    ->width(320);
-
-                $this->addMediaConversion('extra_large')
-                    ->width(720);
-            });
+        $this->addMediaCollection('about_video')->singleFile();
     }
 }

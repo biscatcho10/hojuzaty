@@ -7,9 +7,9 @@
         ])
         @slot('name', trans('settings::settings.plural'))
         @slot('isActive', request()->routeIs('*settings*') || request()->routeIs('*operative-history*') ||
-            request()->routeIs('*roles*') || request()->routeIs('*roles*') ||
-            request()->routeIs('*labs*') || request()->routeIs('*branches*') || request()->routeIs('*rooms*') ||
-            request()->routeIs('*users*') || request()->routeIs('*usertypes*'))
+            request()->routeIs('*roles*') ||
+            request()->routeIs('*roles*') || request()->routeIs('*labs*') || request()->routeIs('*branches*') ||
+            request()->routeIs('*rooms*') || request()->routeIs('*users*') || request()->routeIs('*usertypes*'))
             @slot('icon', 'fas fa-cogs')
             @php(
     $trees = [
@@ -22,7 +22,7 @@
             'module' => 'Settings',
             'icon' => 'fas fa-cog',
         ],
-        // settings contacts
+             // settings contacts
         [
             'name' => trans('settings::settings.tabs.contacts'),
             'url' => route('dashboard.settings.index', ['tab' => 'contacts']),
@@ -40,6 +40,24 @@
             'module' => 'Settings',
             'icon' => 'fab fa-facebook',
         ],
+        // settings seo
+        [
+            'name' => trans('settings::settings.tabs.seo'),
+            'url' => route('dashboard.settings.index', ['tab' => 'seo']),
+            'can' => ['permission' => 'read_settings'],
+            'isActive' => request()->routeIs('*settings*') && request('tab') == 'seo',
+            'module' => 'Settings',
+            'icon' => 'fas fa-search',
+        ],
+          // Google Analytics and Facebook Pixel
+        [
+            'name' => trans('Google Analytics and Facebook Pixel'),
+            'url' => route('dashboard.settings.index', ['tab' => 'pixel']),
+            'can' => ['permission' => 'read_settings'],
+            'isActive' => request()->routeIs('*settings*') && request('tab') == 'pixel',
+            'module' => 'Settings',
+            'icon' => 'fas fa-chart-line',
+        ]
     ]
 )
             @slot('tree', $trees)

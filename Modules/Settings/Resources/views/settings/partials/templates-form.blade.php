@@ -11,7 +11,7 @@
 
 <div class="accordion" id="accordionExample">
 
-    <div class="card">
+    {{-- <div class="card">
         <div class="card-header" id="heading1">
             <h2 class="mb-0">
                 <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse"
@@ -38,7 +38,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 
     <div class="card">
         <div class="card-header" id="heading2">
@@ -63,18 +63,19 @@
                 <div class="row">
                     <div class="col-12">
                         {{ BsForm::textarea('contact_mail_message')->rows(3)->attribute('class', 'form-control ckeditor')->attribute('id', 'mailEditor2')->value(Settings::get('contact_mail_message'))->label(__('Message')) }}
+                          <small class="form-text text-warning">Be carefull use {name} variable in your template</small>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="card">
+    {{-- <div class="card">
         <div class="card-header" id="heading3">
             <h2 class="mb-0">
                 <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse"
                     data-target="#collapse3" aria-expanded="true" aria-controls="collapse3">
-                    # {{ __('Donors Mail Template') }}
+                    # {{ __('Media Register Mail Template') }}
                 </button>
             </h2>
         </div>
@@ -84,26 +85,28 @@
 
                 <div class="row">
                     <div class="col-12">
-                        {{ BsForm::text('donation_mail_subject')->value(Settings::get('donation_mail_subject'))->label(__('Subject')) }}
+                        {{ BsForm::text('media_mail_subject')->value(Settings::get('media_mail_subject'))->label(__('Subject')) }}
                     </div>
                 </div>
 
 
                 <div class="row">
                     <div class="col-12">
-                        {{ BsForm::textarea('donation_mail_message')->rows(3)->attribute('class', 'form-control ckeditor')->attribute('id', 'mailEditor3')->value(Settings::get('donation_mail_message'))->label(__('Message')) }}
+                        {{ BsForm::textarea('media_mail_message')->rows(3)->attribute('class', 'form-control ckeditor')->attribute('id', 'mailEditor2')->value(Settings::get('media_mail_message'))->label(__('Message')) }}
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
+
+
 
     <div class="card">
         <div class="card-header" id="heading4">
             <h2 class="mb-0">
                 <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse"
                     data-target="#collapse4" aria-expanded="true" aria-controls="collapse4">
-                    # {{ __('Volunteers Mail Template') }}
+                    # {{ __('Sms Message Template') }}
                 </button>
             </h2>
         </div>
@@ -113,20 +116,13 @@
 
                 <div class="row">
                     <div class="col-12">
-                        {{ BsForm::text('volunteer_mail_subject')->value(Settings::get('volunteer_mail_subject'))->label(__('Subject')) }}
+                        {{ BsForm::textarea('sms_message')->rows(3)->attribute('class', 'form-control')->value(Settings::get('sms_message'))->label(__('Sms Message')) }}
                     </div>
                 </div>
 
-
-                <div class="row">
-                    <div class="col-12">
-                        {{ BsForm::textarea('volunteer_mail_message')->rows(3)->attribute('class', 'form-control ckeditor')->attribute('id', 'mailEditor4')->value(Settings::get('volunteer_mail_message'))->label(__('Message')) }}
-                    </div>
-                </div>
             </div>
         </div>
     </div>
-
 
 </div>
 

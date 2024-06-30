@@ -5,10 +5,22 @@ namespace Modules\Settings\Http\Controllers\Dashboard;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Laraeast\LaravelSettings\Facades\Settings;
 use Modules\Settings\Entities\AboutUs;
 
 class AboutUsController extends Controller
 {
+
+    /**
+     * The list of the files keys.
+     *
+     * @var array
+     */
+    protected $files = [
+        'vision_cover',
+        'mission_cover',
+        'owner',
+    ];
 
     public function form()
     {
@@ -18,12 +30,16 @@ class AboutUsController extends Controller
 
     public function update(Request $request)
     {
-        // dd($request->all());
-        $about = AboutUs::first();
-        if ($about) {
-            $about->update($request->all());
-        } else {
-            $about = AboutUs::create($request->all());
+        foreach ($request->except(array_merge(['_token', '_method', 'media'], $this->files))
+            as $key => $value) {
+            Settings::set($key, $value);
+        }
+
+        foreach ($this->files as $file) {
+            if ($request->hasFile($file)) {
+                delFile(Settings::instance($file)->getMediaResource($file));
+                Settings::instance($file)->addMediaFromRequest($file)->toMediaCollection($file);
+            }
         }
 
         flash(trans('settings::settings.messages.update_about'))->success();
@@ -44,5 +60,4 @@ class AboutUsController extends Controller
         $page = "map2";
         return view('settings::settings.tabs.map', compact('about', 'page'));
     }
-
 }

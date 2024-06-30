@@ -12,8 +12,6 @@
 @include('partners::partners.sidebar')
 <!-- Contact Us -->
 @include('settings::contact-us.sidebar')
-<!-- Subscribers -->
-{{-- @include('settings::subscribers.sidebar') --}}
 <!-- About Us -->
 @include('settings::about-sidebar')
 <!-- settings -->

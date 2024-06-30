@@ -40,3 +40,5 @@
         <i class="fas fa-trash-alt fa fa-fw"></i>
     </button>
 @endcan
+
+

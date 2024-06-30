@@ -15,6 +15,9 @@
 
             @include('settings::settings.partials.about-form')
 
+            @include('settings::settings.partials.map1')
+
+
             {{ BsForm::submit()->label(trans('settings::settings.actions.save'))->attribute('class', 'btn btn-danger mb-2') }}
         @endcomponent
         {{ BsForm::close() }}
