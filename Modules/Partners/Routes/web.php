@@ -13,4 +13,7 @@
 
 Route::middleware('dashboard')->prefix('dashboard')->as('dashboard.')->group(function () {
     Route::resource('partners', 'PartnersController');
+
+    Route::get('order/partners', 'PartnersController@getOrder')->name('order.form.partners');
+    Route::post('order/partners', 'PartnersController@order')->name('order.partners');
 });

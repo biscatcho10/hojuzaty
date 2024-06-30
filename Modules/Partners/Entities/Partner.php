@@ -7,6 +7,7 @@ use App\Http\Filters\Filterable;
 use Astrotomic\Translatable\Translatable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Modules\Exhibitions\Entities\Exhibition;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 
@@ -14,7 +15,7 @@ class Partner extends Model implements HasMedia
 {
     use HasFactory, Filterable, HasUploader, InteractsWithMedia;
 
-    protected $fillable = ['name', 'link'];
+    protected $fillable = ['name', 'link','rank'];
 
     protected $table = 'partners';
 
@@ -35,7 +36,8 @@ class Partner extends Model implements HasMedia
      */
     public function registerMediaCollections(): void
     {
-        $this->addMediaCollection('images');
+        $this->addMediaCollection('images')
+            ->useFallbackUrl('https://cdn.shopify.com/s/files/1/0422/0194/0126/products/CombinePhotos_800x.png?v=1633998941');
     }
 
 
@@ -43,7 +45,7 @@ class Partner extends Model implements HasMedia
     /**
      * The Partner image url.
      *
-     * @return bool
+     * @return string
      */
     public function getImage()
     {

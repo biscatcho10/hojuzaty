@@ -2,11 +2,12 @@
 
 namespace Modules\Partners\Http\Controllers;
 
-use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Validation\ValidatesRequests;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Illuminate\View\View;
 use Modules\Partners\Entities\Partner;
 use Modules\Partners\Http\Requests\PartnerRequest;
 use Modules\Partners\Repositories\PartnerRepository;
@@ -24,7 +25,6 @@ class PartnersController extends Controller
      * CountryController constructor.
      *
      * @param PartnerRepository $repository
-     * @param CityRepository $cityRepository
      */
     public function __construct(PartnerRepository $repository)
     {
@@ -40,19 +40,18 @@ class PartnersController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return Application|Factory|View
+     * @return View
      */
     public function index()
     {
         $partners = $this->repository->all();
-
-        return view('partners::partners.index', compact('partners'));
+        return view('partners::partners.index', get_defined_vars());
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return Application|Factory|View
+     * @return View
      */
     public function create()
     {
@@ -62,9 +61,8 @@ class PartnersController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param CountryRequest $request
+     * @param PartnerRequest $request
      * @return RedirectResponse
-     * @throws Exception
      */
     public function store(PartnerRequest $request)
     {
@@ -79,9 +77,7 @@ class PartnersController extends Controller
      * Display the specified resource.
      *
      * @param Partner $partner
-     * @return Application|Factory|View
-     * @throws AuthorizationException
-     * @throws Exception
+     * @return View
      */
     public function show(Partner $partner)
     {
@@ -94,7 +90,7 @@ class PartnersController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param Partner $partner
-     * @return Application|Factory|View
+     * @return View
      */
     public function edit(Partner $partner)
     {
@@ -104,7 +100,7 @@ class PartnersController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param CountryRequest $request
+     * @param PartnerRequest $request
      * @param Partner $partner
      * @return RedirectResponse
      */
@@ -131,5 +127,27 @@ class PartnersController extends Controller
         flash(trans('partners::partners.messages.deleted'))->error();
 
         return redirect()->route('dashboard.partners.index');
+    }
+
+
+    public function getOrder()
+    {
+        $partners = $this->repository->all();
+        return view('partners::partners.order', get_defined_vars());
+    }
+
+
+    public function order(Request $request)
+    {
+        foreach ($request->partners as $key => $partner) {
+            $rank = $key + 1;
+            Partner::where('id', $partner)->update([
+                'rank' => $rank,
+            ]);
+        }
+
+        flash(trans('partners::partners.messages.ordered'))->success();
+
+        return redirect()->route('dashboard.order.form.partners');
     }
 }

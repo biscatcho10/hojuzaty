@@ -18,6 +18,6 @@
             'can' => ['permission' => 'create_partners'],
             'isActive' => request()->routeIs('*partners.create'),
             'module' => 'Partners',
-        ],
+        ]
     ])
 @endcomponent

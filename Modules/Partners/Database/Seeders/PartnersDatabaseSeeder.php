@@ -20,6 +20,8 @@ class PartnersDatabaseSeeder extends Seeder
             $data = sprintf("%03d", $i);
             $partner = Partner::create([
                 'name' => 'partner '. $data,
+                "rank" => $i,
+                // 'exhibition_id' => Exhibition::inRandomOrder()->first()->id,
             ]);
             // add logo image
             $partner->addMedia(__DIR__ . '/partners/' . $data . '.png')

@@ -18,17 +18,23 @@ return [
         'options' => 'Options',
         'save' => 'Save',
         'filter' => 'Filter',
+        'order' => 'Order The Partners',
     ],
     'messages' => [
         'created' => 'The Partner has been created successfully.',
         'updated' => 'The Partner has been updated successfully.',
         'deleted' => 'The Partner has been deleted successfully.',
+        'ordered' => 'The Partner have been ordered successfully.',
         'images_note' => 'Supported types: jpeg, png,jpg | Max File Size:10MB',
     ],
     'attributes' => [
         'name' => 'Partner Name',
         'link' => 'Partner Link',
         'image' => 'Partner Image',
+        'exhibition_id' => 'Exhibition',
+        'exhibition' => 'Exhibition',
+        'exhibition_id' => 'Exhibition',
+        'exhibition' => 'Exhibition',
     ],
     'dialogs' => [
         'delete' => [

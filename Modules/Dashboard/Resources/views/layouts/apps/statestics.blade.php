@@ -5,8 +5,8 @@
                 <div class="row">
                     <div class="col-8">
                         <div>
-                            <p class="text-muted fw-medium mt-1 mb-2">{{ __('Total Amount') }}</p>
-                            <h4>{{ $donation_amount }}</h4>
+                            <p class="text-muted fw-medium mt-1 mb-2">{{ __('Projects') }}</p>
+                            <h4>{{ $projects_number }}</h4>
                         </div>
                     </div>
 
@@ -79,7 +79,7 @@
                                                                 dominant-baseline="auto" font-size="12px"
                                                                 font-weight="400" fill="#373d3f"
                                                                 class="apexcharts-text apexcharts-datalabel-value"
-                                                                style="font-family: Helvetica, Arial, sans-serif;">100%</text>
+                                                                style="font-family: Helvetica, Arial, sans-serif;">{{ $projects_number }}</text>
                                                         </g>
                                                     </g>
                                                 </g>
@@ -103,7 +103,7 @@
                     </div>
                 </div>
 
-                </span>{{ __('Total Amount of Donations') }}</p>
+                </span>{{ __('Total Number of Projects') }}</p>
             </div>
         </div>
     </div>
@@ -113,8 +113,8 @@
                 <div class="row">
                     <div class="col-8">
                         <div>
-                            <p class="text-muted fw-medium mt-1 mb-2">{{ __('Online Donations') }}</p>
-                            <h4>{{ $online_amount }}</h4>
+                            <p class="text-muted fw-medium mt-1 mb-2">{{ __('Employees') }}</p>
+                            <h4>{{ $employees_number }}</h4>
                         </div>
                     </div>
 
@@ -189,7 +189,7 @@
                                                                 dominant-baseline="auto" font-size="12px"
                                                                 font-weight="400" fill="#373d3f"
                                                                 class="apexcharts-text apexcharts-datalabel-value"
-                                                                style="font-family: Helvetica, Arial, sans-serif;">{{ $online_percentage }}%</text>
+                                                                style="font-family: Helvetica, Arial, sans-serif;">{{ $employees_number }}</text>
                                                         </g>
                                                     </g>
                                                 </g>
@@ -213,7 +213,7 @@
                     </div>
                 </div>
 
-                </span>{{ __('Total Amount of Online Donations') }}</p>
+                </span>{{ __('Total Number of Employees') }}</p>
             </div>
         </div>
     </div>
@@ -223,8 +223,8 @@
                 <div class="row">
                     <div class="col-8">
                         <div>
-                            <p class="text-muted fw-medium mt-1 mb-2">{{ __('Offline Donations') }}</p>
-                            <h4>{{ $offline_amount }}</h4>
+                            <p class="text-muted fw-medium mt-1 mb-2">{{ __('Clients') }}</p>
+                            <h4>{{ $client_number }}</h4>
                         </div>
                     </div>
 
@@ -299,7 +299,7 @@
                                                                 dominant-baseline="auto" font-size="12px"
                                                                 font-weight="400" fill="#373d3f"
                                                                 class="apexcharts-text apexcharts-datalabel-value"
-                                                                style="font-family: Helvetica, Arial, sans-serif;">{{ $offline_percentage }}%</text>
+                                                                style="font-family: Helvetica, Arial, sans-serif;">{{ $client_number }}</text>
                                                         </g>
                                                     </g>
                                                 </g>
@@ -323,7 +323,7 @@
                     </div>
                 </div>
 
-                </span>{{ __('Total Amount of Offline Donations') }}</p>
+                </span>{{ __('Total Number of Clients') }}</p>
             </div>
         </div>
     </div>

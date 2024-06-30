@@ -1,12 +1,12 @@
 @extends('dashboard::layouts.default')
 
 @section('title')
-    {{ $partner->name }}
+    {{ $partner->id }}
 @endsection
 
 @section('content')
     @component('dashboard::layouts.components.page')
-        @slot('title', $partner->name)
+        @slot('title', $partner->id)
         @slot('breadcrumbs', ['dashboard.partners.edit', $partner])
 
         {{ BsForm::resource('partners::partners')->putModel($partner, route('dashboard.partners.update', $partner), ['files' => true,'data-parsley-validate']) }}

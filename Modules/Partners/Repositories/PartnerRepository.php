@@ -30,7 +30,7 @@ class PartnerRepository implements CrudRepository
      */
     public function all()
     {
-        return Partner::filter($this->filter)->paginate(request('perPage'));
+        return Partner::latest()->filter($this->filter)->paginate(request('perPage'));
     }
 
     /**
@@ -44,8 +44,7 @@ class PartnerRepository implements CrudRepository
         /** @var Partner $partner */
         $partner = Partner::create($data);
 
-        $partner->addAllMediaFromTokens();
-        // $partner->addMediaFromRequest('image')->toMediaCollection('images');
+        $partner->addMediaFromRequest('image')->toMediaCollection('images');
 
         return $partner;
     }
@@ -78,11 +77,10 @@ class PartnerRepository implements CrudRepository
 
         $partner->update($data);
 
-        $partner->addAllMediaFromTokens();
-        // if($data['image'])
-        // {
-        //     $partner->addMediaFromRequest('image')->toMediaCollection('images');
-        // }
+        if (isset($data['image'])) {
+            $partner->clearMediaCollection('images');
+            $partner->addMediaFromRequest('image')->toMediaCollection('images');
+        }
 
         return $partner;
     }

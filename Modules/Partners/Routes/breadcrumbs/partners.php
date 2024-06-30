@@ -12,7 +12,12 @@ Breadcrumbs::for('dashboard.partners.create', function ($breadcrumb) {
 
 Breadcrumbs::for('dashboard.partners.show', function ($breadcrumb, $partner) {
     $breadcrumb->parent('dashboard.partners.index');
-    $breadcrumb->push($partner->name, route('dashboard.partners.show', $partner));
+    $breadcrumb->push($partner->id, route('dashboard.partners.show', $partner));
+});
+
+Breadcrumbs::for('dashboard.partners.order', function ($breadcrumb) {
+    $breadcrumb->parent('dashboard.partners.index');
+    $breadcrumb->push(trans('partners::partners.actions.order'), route('dashboard.order.form.partners'));
 });
 
 Breadcrumbs::for('dashboard.partners.edit', function ($breadcrumb, $partner) {

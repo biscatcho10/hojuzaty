@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Modules\Exhibitions\Entities\Exhibition;
 
 class CreatePartnersTable extends Migration
 {
@@ -15,8 +16,9 @@ class CreatePartnersTable extends Migration
     {
         Schema::create('partners', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('name')->nullable();
             $table->string('link')->nullable();
+            $table->unsignedBigInteger('rank');
             $table->timestamps();
         });
     }

@@ -39,8 +39,8 @@ class PartnerRequest extends FormRequest
     public function createRules()
     {
         return RuleFactory::make([
-            'name' => ['required', 'string', 'max:255'],
-            'image' => 'nullable', 'mimes:jpeg,jpg,png', 'max:1000',
+            // 'name' => ['required', 'string', 'max:255'],
+            'image' => 'required', 'mimes:jpeg,jpg,png', 'max:1000',
         ]);
     }
 
@@ -52,7 +52,7 @@ class PartnerRequest extends FormRequest
     public function updateRules()
     {
         return RuleFactory::make([
-            'name' => ['required', 'string', 'max:255'],
+            // 'name' => ['required', 'string', 'max:255'],
             'image' => 'nullable', 'mimes:jpeg,jpg,png', 'max:1000',
         ]);
     }

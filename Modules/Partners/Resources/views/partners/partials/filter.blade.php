@@ -3,15 +3,16 @@
     @slot('title', trans('partners::partners.actions.filter'))
 
     <div class="row">
-        <div class="col-md-3">
+        {{-- <div class="col-md-3">
             {{ BsForm::text('name')->value(request('name')) }}
-        </div>
+        </div> --}}
         <div class="col-md-3">
-            {{ BsForm::number('perPage')
-                ->value(request('perPage', 15))
-                ->min(1)
-                ->label(trans('partners::partners.perPage')) }}
+            {{ BsForm::number('perPage')->value(request('perPage', 15))->min(1)->label(trans('partners::partners.perPage')) }}
         </div>
+
+        {{-- <div class="col-md-3">
+            {{ BsForm::select('exhibition')->options($exhibition)->placeholder('Select the exhibition') }}
+        </div> --}}
     </div>
 
     @slot('footer')

@@ -1,11 +1,11 @@
 @extends('dashboard::layouts.default')
 
 @section('title')
-    {{ $partner->name }}
+    {{ $partner->id }}
 @endsection
 @section('content')
     @component('dashboard::layouts.components.page')
-        @slot('title', $partner->name)
+        @slot('title', $partner->id)
         @slot('breadcrumbs', ['dashboard.partners.show', $partner])
 
         <div class="row">
@@ -15,10 +15,10 @@
 
                     <table class="table table-middle">
                         <tbody>
-                        <tr>
-                            <th width="200">@lang('partners::partners.attributes.name')</th>
-                            <td>{{ $partner->name }}</td>
-                        </tr>
+                        {{-- <tr>
+                            <th width="200">@lang('partners::partners.attributes.exhibition')</th>
+                            <td>{{ $partner->exhibition->name }}</td>
+                        </tr> --}}
                         <tr>
                             <th width="200">@lang('partners::partners.attributes.image')</th>
                             <td>
