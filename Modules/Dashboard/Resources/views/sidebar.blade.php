@@ -10,6 +10,10 @@
 @include('categories::categories.sidebar')
 <!-- Partners -->
 @include('partners::partners.sidebar')
+<!-- News -->
+@include('news::news.sidebar')
+<!-- Sliders -->
+@include('sliders::sliders.sidebar')
 <!-- Contact Us -->
 @include('settings::contact-us.sidebar')
 <!-- About Us -->

@@ -17,9 +17,9 @@ class AboutUsController extends Controller
      * @var array
      */
     protected $files = [
+        'why_choose_us_cover',
         'vision_cover',
         'mission_cover',
-        'owner',
     ];
 
     public function form()
@@ -30,14 +30,14 @@ class AboutUsController extends Controller
 
     public function update(Request $request)
     {
-        foreach ($request->except(array_merge(['_token', '_method', 'media'], $this->files))
-            as $key => $value) {
+        foreach ($request->except(array_merge(['_token', '_method', 'media'], $this->files)) as $key => $value) {
             Settings::set($key, $value);
         }
 
         foreach ($this->files as $file) {
             if ($request->hasFile($file)) {
-                delFile(Settings::instance($file)->getMediaResource($file));
+                Settings::set($file, $file);
+                Settings::instance($file)->clearMediaCollection($file);
                 Settings::instance($file)->addMediaFromRequest($file)->toMediaCollection($file);
             }
         }

@@ -103,6 +103,7 @@ return [
         'our_vision' => 'Our Vision',
         'our_mission' => 'Our Mission',
         'our_tasks' => 'Our Tasks',
+        'why_chosse_us' => 'Why Choose Us',
     ],
     'dialogs' => [
         'delete' => [

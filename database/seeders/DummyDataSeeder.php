@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Modules\Accounts\Database\Seeders\UsersTableSeeder;
 use Modules\Categories\Database\Seeders\CategoriesDatabaseSeeder;
+use Modules\News\Database\Seeders\NewsDatabaseSeeder;
 use Modules\Partners\Database\Seeders\PartnersDatabaseSeeder;
 use Modules\Settings\Database\Seeders\AboutUsTableSeeder;
 use Modules\Settings\Database\Seeders\ContactusTableSeeder;
@@ -22,7 +23,7 @@ class DummyDataSeeder extends Seeder
         $this->call(LaratrustSeeder::class);
         $this->call(UsersTableSeeder::class);
         $this->call(SettingsDatabaseSeeder::class);
-        $this->call(AboutUsTableSeeder::class);
+        $this->call(NewsDatabaseSeeder::class);
         $this->call(ContactusTableSeeder::class);
         $this->call(PartnersDatabaseSeeder::class);
         $this->call(CategoriesDatabaseSeeder::class);

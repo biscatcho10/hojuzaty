@@ -14,7 +14,7 @@
             'module' => 'Settings',
         ],
         [
-            'name' => trans('Map'),
+            'name' => trans('Google Maps Settings'),
             'url' => route('dashboard.map1'),
             'can' => ['permission' => 'read_settings'],
             'isActive' => request()->routeIs('dashboard.map1'),
