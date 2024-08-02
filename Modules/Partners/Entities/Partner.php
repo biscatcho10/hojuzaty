@@ -4,10 +4,8 @@ namespace Modules\Partners\Entities;
 
 use AhmedAliraqi\LaravelMediaUploader\Entities\Concerns\HasUploader;
 use App\Http\Filters\Filterable;
-use Astrotomic\Translatable\Translatable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Modules\Exhibitions\Entities\Exhibition;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 

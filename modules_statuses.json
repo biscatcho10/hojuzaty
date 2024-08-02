@@ -5,7 +5,7 @@
     "Frontend": true,
     "Roles": true,
     "Partners": true,
-    "Categories": true,
     "News": true,
-    "Sliders": true
+    "Sliders": true,
+    "Destinations": true
 }

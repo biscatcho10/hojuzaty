@@ -6,8 +6,8 @@
 @endcomponent
 <!-- Admins -->
 @include('accounts::admins.sidebar')
-<!-- categories -->
-@include('categories::categories.sidebar')
+<!-- destinations -->
+@include('destinations::destinations.sidebar')
 <!-- Partners -->
 @include('partners::partners.sidebar')
 <!-- News -->

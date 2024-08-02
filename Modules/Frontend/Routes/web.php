@@ -20,11 +20,18 @@ Route::middleware(['frontend.locales'])->group(function () {
 
     Route::get('/about', 'FrontendController@about')->name('about');
 
-    Route::get('/services', 'FrontendController@services')->name('services');
+    Route::get('/blogs', 'FrontendController@blogs')->name('blogs');
 
-    Route::get('/contact', 'FrontendController@contact')->name('contact');
+    Route::get('/blogs/{blog}', 'FrontendController@blogDetails')->name('blog.details');
+
+    Route::get('/destinations', 'FrontendController@destinations')->name('destinations');
+
+    Route::get('/destinations/{destination}', 'FrontendController@destinationDetails')->name('destination.details');
+
+    Route::get('/inquiry', 'FrontendController@inquiry')->name('inquiry');
+
+    Route::post('/inquiry', 'FrontendController@inquiryPost')->name('inquiry.post');
 
     Route::post('/contact', 'FrontendController@contactPost')->name('contact.post');
 
-    Route::post('/subscribe', 'FrontendController@subscribePost')->name('subscribe.post');
 });

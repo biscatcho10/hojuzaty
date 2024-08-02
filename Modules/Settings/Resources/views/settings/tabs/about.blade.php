@@ -9,7 +9,7 @@
         @slot('title', trans('settings::settings.actions.update'))
         @slot('breadcrumbs', ['dashboard.settings.update'])
 
-        {{ BsForm::putModel($about, route('dashboard.about-us.update'), ['files' => true, 'class' => 'repeater-award']) }}
+        {{ BsForm::put(route('dashboard.about-us.update'), ['files' => true]) }}
         @component('dashboard::layouts.components.box')
             @slot('title', trans('settings::settings.tabs.about'))
 

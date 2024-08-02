@@ -2,7 +2,6 @@
 
 namespace Modules\Settings\Http\Controllers\Dashboard;
 
-use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Laraeast\LaravelSettings\Facades\Settings;
@@ -24,8 +23,7 @@ class AboutUsController extends Controller
 
     public function form()
     {
-        $about = AboutUs::first();
-        return view('settings::settings.tabs.about', compact('about'));
+        return view('settings::settings.tabs.about');
     }
 
     public function update(Request $request)

@@ -1,0 +1,13 @@
+{
+    "name": "Destinations",
+    "alias": "destinations",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Destinations\\Providers\\DestinationsServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}
