@@ -32,13 +32,19 @@ class SlidersDatabaseSeeder extends Seeder
                 'title:ar' => 'الحماية الأطفال والتنمية',
                 'content:en' => 'A.P.E. launched a literacy program in 1989 in a small apartment in Moqattam. This small beginning has grown to include a nursery',
                 'content:ar' => 'قامت جمعية حماية البيئة من التلوث A.P.E بإطلاق برنامج محو الأمية في عام 1989 وكانت البداية في شقة صغيرة في حي المقطم.',
+            ],
+            [
+                'title:en' => 'Child Protection and Development',
+                'title:ar' => 'الحماية الأطفال والتنمية',
+                'content:en' => 'A.P.E. launched a literacy program in 1989 in a small apartment in Moqattam. This small beginning has grown to include a nursery',
+                'content:ar' => 'قامت جمعية حماية البيئة من التلوث A.P.E بإطلاق برنامج محو الأمية في عام 1989 وكانت البداية في شقة صغيرة في حي المقطم.',
             ]
         ];
 
-        foreach ($sliders as $value) {
+        foreach ($sliders as $i => $value) {
             $sliders = Slider::create($value);
             // add image
-            $sliders->addMedia(__DIR__ . '/images/slider.jpg')
+            $sliders->addMedia(__DIR__ . '/images/slider-' . ($i + 1) . '.jpg')
                 ->preservingOriginal()
                 ->toMediaCollection('images');
         }

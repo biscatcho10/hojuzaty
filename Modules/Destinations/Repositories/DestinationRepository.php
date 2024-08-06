@@ -30,7 +30,7 @@ class DestinationRepository implements CrudRepository
      */
     public function all()
     {
-        return Destination::filter($this->filter)->paginate(request('perPage'));
+        return Destination::filter($this->filter)->withCount('places')->latest()->paginate(request('perPage'));
     }
 
     /**
@@ -43,6 +43,23 @@ class DestinationRepository implements CrudRepository
     {
         /** @var Destination $destination */
         $destination = Destination::create($data);
+
+        // save the main image
+        if (isset($data['image'])) {
+            $destination->addMedia($data['image'])->toMediaCollection('images');
+        }
+
+        // save the cover
+        if (isset($data['cover'])) {
+            $destination->addMedia($data['cover'])->toMediaCollection('covers');
+        }
+
+        // save the galleries
+        if (isset($data['galleries'])) {
+            foreach ($data['galleries'] as $gallery) {
+                $destination->addMedia($gallery)->toMediaCollection('gallery');
+            }
+        }
 
         return $destination;
     }
@@ -74,6 +91,23 @@ class DestinationRepository implements CrudRepository
         $destination = $this->find($model);
 
         $destination->update($data);
+
+        // save the main image
+        if (isset($data['image'])) {
+            $destination->addMedia($data['image'])->toMediaCollection('images');
+        }
+
+        // save the cover
+        if (isset($data['cover'])) {
+            $destination->addMedia($data['cover'])->toMediaCollection('covers');
+        }
+
+        // save the galleries
+        if (isset($data['galleries'])) {
+            foreach ($data['galleries'] as $gallery) {
+                $destination->addMedia($gallery)->toMediaCollection('gallery');
+            }
+        }
 
         return $destination;
     }

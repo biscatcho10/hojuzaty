@@ -3,7 +3,7 @@
     @slot('url', route('dashboard.destinations.index'))
     @slot('name', trans('destinations::destinations.plural'))
     @slot('isActive', request()->routeIs('*destinations*'))
-    @slot('icon', 'fas fa-th')
+    @slot('icon', 'fas fa-globe')
     @slot('tree', [
         [
             'name' => trans('destinations::destinations.actions.list'),

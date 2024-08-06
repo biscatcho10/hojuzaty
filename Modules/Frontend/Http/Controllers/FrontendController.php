@@ -5,6 +5,7 @@ namespace Modules\Frontend\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\View\View;
+use Modules\Destinations\Entities\Destination;
 use Modules\Partners\Entities\Partner;
 use Modules\Settings\Entities\ContactUs;
 use Modules\Sliders\Entities\Slider;
@@ -16,6 +17,8 @@ class FrontendController extends Controller
     {
         $sliders = Slider::get();
         $partners = Partner::get();
+        $destinations = Destination::get();
+        $news = Destination::get();
 
         return view('frontend::index', get_defined_vars());
     }

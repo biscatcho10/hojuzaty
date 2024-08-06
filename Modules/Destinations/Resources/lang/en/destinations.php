@@ -33,6 +33,7 @@ return [
         'image' => 'Destination Image',
         'cover' => 'Destination Cover',
         'gallery' => 'Destination Gallery',
+        'places' => 'Places',
     ],
     'dialogs' => [
         'delete' => [

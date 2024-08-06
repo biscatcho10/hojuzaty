@@ -16,42 +16,20 @@
                     <div class="blogs-slider">
                         <div class="slider swiper swiper-css-common">
                             <div class="swiper-wrapper">
-                                <!-- singl slide -->
-                                <div class="swiper-slide">
-                                    <div class="card-one">
-                                        <div class="badg">Article</div>
-                                        <img src="{{ asset('frontend/images/test/Img.jpg') }}" />
-                                        <h3>test 1</h3>
-                                        <p>
-                                            Lorem ipsum dolor sit amet consectetur adipisicing
-                                            elit. Perspiciatis temporibus expedita deserunt quia
-                                        </p>
+                                @forelse ($news as $blog)
+                                    <!-- singl slide -->
+                                    <div class="swiper-slide">
+                                        <div class="card-one">
+                                            <div class="badg">Article</div>
+                                            <img src="{{ $blog->getImage() }}" alt="blog" />
+                                            <h3>{{ $blog->title }}</h3>
+                                            <p>
+                                                {{ $blog->content }}
+                                            </p>
+                                        </div>
                                     </div>
-                                </div>
-                                <!-- singl slide -->
-                                <div class="swiper-slide">
-                                    <div class="card-one">
-                                        <div class="badg">Article</div>
-                                        <img src="{{ asset('frontend/images/test/1-s.png') }}" />
-                                        <h3>test 1</h3>
-                                        <p>
-                                            Lorem ipsum dolor sit amet consectetur adipisicing
-                                            elit. Perspiciatis temporibus expedita deserunt quia
-                                        </p>
-                                    </div>
-                                </div>
-                                <!-- singl slide -->
-                                <div class="swiper-slide">
-                                    <div class="card-one">
-                                        <div class="badg">Article</div>
-                                        <img src="{{ asset('frontend/images/test/1-s.png') }}" />
-                                        <h3>test 1</h3>
-                                        <p>
-                                            Lorem ipsum dolor sit amet consectetur adipisicing
-                                            elit. Perspiciatis temporibus expedita deserunt quia
-                                        </p>
-                                    </div>
-                                </div>
+                                @empty
+                                @endforelse
                             </div>
                         </div>
                         <div class="swiper-button-group justify-content-end">

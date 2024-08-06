@@ -1,5 +1,5 @@
 <div class="card card-custom mb-5">
-    @if(isset($title) || isset($tools))
+    @if (isset($title) || isset($tools))
         <div class="card-header flex-wrap border-0 pt-6 pb-0">
             <div class="card-title">
                 <h3 class="card-label">
@@ -12,7 +12,7 @@
             </div>
         </div>
     @endif
-<!-- /.card-header -->
+    <!-- /.card-header -->
     <div class="card-body {{ $bodyClass ?? '' }}">
         {{ $slot }}
     </div>
@@ -24,4 +24,3 @@
     @endisset
 </div>
 <!-- /.card -->
-

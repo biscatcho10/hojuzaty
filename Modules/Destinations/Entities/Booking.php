@@ -26,5 +26,16 @@ class Booking extends Model
     {
         return $this->belongsTo(Destination::class);
     }
+
+
+    /**
+     * Get the full name of the booking.
+     * 
+     * @return string
+     */
+    public function getNameAttribute()
+    {
+        return "{$this->first_name} {$this->second_name}";
+    }
     
 }

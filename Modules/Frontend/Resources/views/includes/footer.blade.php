@@ -13,21 +13,21 @@
                         <img src="{{ asset('frontend/images/icons/whats-app.svg') }}" alt="" />
                         <div>
                             <p>Whatsapp</p>
-                            <a href="https://wa.me/+201012346467">+201012346467</a>
+                            <a href="https://wa.me/{{ settings::get('whatsapp') }}">{{ settings::get('whatsapp') }}</a>
                         </div>
                     </div>
                     <div class="item">
                         <img src="{{ asset('frontend/images/icons/sms-3.svg') }}" alt="" />
                         <div>
                             <p>Email</p>
-                            <a href="mailto:Hojuzaty@support.com">Hojuzaty@support.com</a>
+                            <a href="mailto:Hojuzaty@support.com">{{ Settings::get('email') }}</a>
                         </div>
                     </div>
                     <div class="item">
                         <img src="{{ asset('frontend/images/icons/call-calling-2.svg') }}" alt="" />
                         <div>
                             <p>Call Center</p>
-                            <a href="tel:+201553760719">+201553760719</a>
+                            <a href="tel:+201553760719">{{ Settings::get('phone') }}</a>
                         </div>
                     </div>
                 </div>
@@ -37,10 +37,10 @@
                 <h3 class="m-w-w">Company</h3>
                 <ul>
                     <li>
-                        <a href="/about-Us">About Us</a>
+                        <a href="{{ route('about') }}">About Us</a>
                     </li>
                     <li>
-                        <a href="/Blogs">Blogs</a>
+                        <a href="{{ route('blogs') }}">Blogs</a>
                     </li>
                 </ul>
             </div>
@@ -48,7 +48,7 @@
             <div class="col-6 col-sm-3 col-md-3">
                 <h3 class="m-w-w">Destinations</h3>
                 <div class="d-lg-flex gap-3">
-                    <ul>
+                    {{-- <ul>
                         <li>
                             <a href="/about-Us">Destination 1</a>
                         </li>
@@ -75,7 +75,21 @@
                         <li>
                             <a href="/Blogs">Destination 8</a>
                         </li>
-                    </ul>
+                    </ul> --}}
+
+                    <!-- loop on ul every 4 li -->
+                    @for ($i = 0; $i < count($destinations); $i++)
+                        @if ($i % 4 == 0)
+                            <ul>
+                                @for ($j = $i; $j < $i + 4 && $j < count($destinations); $j++)
+                                    <li>
+                                        <a
+                                            href="{{ route('destination', $destinations[$j]->id) }}">{{ $destinations[$j]->name }}</a>
+                                    </li>
+                                @endfor
+                            </ul>
+                        @endif
+                    @endfor
                 </div>
             </div>
 
@@ -93,17 +107,17 @@
                     <h3 class="my-2">Follow Us</h3>
                     <div class="d-flex gap-2 icons">
                         <div class="single-icon">
-                            <a href="#">
+                            <a href="{{ Settings::get('instagram') }}">
                                 <img src="{{ asset('frontend/images/icons/instagram.svg') }}" alt="" />
                             </a>
                         </div>
                         <div class="single-icon">
-                            <a href="#">
+                            <a href="{{ Settings::get('youtube') }}">
                                 <img src="{{ asset('frontend/images/icons/youtube.svg') }}" alt="" />
                             </a>
                         </div>
                         <div class="single-icon">
-                            <a href="#">
+                            <a href="{{ Settings::get('facebook') }}">
                                 <img src="{{ asset('frontend/images/icons/facebook.svg') }}" alt="" />
                             </a>
                         </div>

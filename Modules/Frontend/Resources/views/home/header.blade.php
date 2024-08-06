@@ -3,21 +3,12 @@
     <div class="header-slider-bg">
         <div class="slider swiper w-100">
             <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <img src="{{ asset('frontend/images/test/1-s-bg.jpg') }}" alt="logo" />
-                </div>
-
-                <div class="swiper-slide">
-                    <img src="{{ asset('frontend/images/test/2-s-bg.jpg') }}" alt="logo" />
-                </div>
-
-                <div class="swiper-slide">
-                    <img src="{{ asset('frontend/images/test/1-s-bg.jpg') }}" alt="logo" />
-                </div>
-
-                <div class="swiper-slide">
-                    <img src="{{ asset('frontend/images/test/2-s-bg.jpg') }}" alt="logo" />
-                </div>
+                @forelse ($sliders as $slider)
+                    <div class="swiper-slide">
+                        <img src="{{ $slider->getImage() }}" alt="logo" />
+                    </div>
+                @empty
+                @endforelse
             </div>
         </div>
     </div>

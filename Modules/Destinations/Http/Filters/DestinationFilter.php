@@ -13,6 +13,7 @@ class DestinationFilter extends BaseFilters
      */
     protected $filters = [
         'name',
+        'description',
     ];
 
     /**
@@ -25,6 +26,22 @@ class DestinationFilter extends BaseFilters
     {
         if ($value) {
             return $this->builder->where('name', 'LIKE', "%$value%");
+        }
+
+        return $this->builder;
+    }
+
+
+    /**
+     * Filter the query by a given description.
+     *
+     * @param string|int $value
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    protected function description($value)
+    {
+        if ($value) {
+            return $this->builder->where('description', 'LIKE', "%$value%");
         }
 
         return $this->builder;

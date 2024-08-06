@@ -21,6 +21,7 @@
                 <tr>
                     <th>@lang('destinations::destinations.attributes.image')</th>
                     <th>@lang('destinations::destinations.attributes.name')</th>
+                    <th>@lang('destinations::destinations.attributes.places')</th>
                     <th style="width: 160px">...</th>
                 </tr>
             </thead>
@@ -28,12 +29,19 @@
                 @forelse($destinations as $destination)
                     <tr>
                         <td>
-                            <img src="{{ $destination->getFirstMediaUrl('image') }}"
+                            <img src="{{ $destination->getImage() }}"
                                  alt="{{ $destination->name }}"
                                  class="img-circle img-size-32 mr-2 rounded">
                         </td>
                         <td class="d-none d-md-table-cell">
                             {{ $destination->name }}
+                        </td>
+                        <td>
+                            <a href="{{ route('dashboard.places.index', $destination->id) }}"
+                               class="btn btn-outline-success btn-sm">
+                                <i class="fas fa-umbrella-beach"></i>
+                                {{ $destination->places_count }}
+                            </a>
                         </td>
 
                         <td style="width: 160px">

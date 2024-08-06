@@ -40,7 +40,7 @@ class Place extends Model implements HasMedia
     /**
      * Get the main image for the place.
      */
-    public function getMainImageAttribute()
+    public function getImage()
     {
         return $this->getFirstMediaUrl('images');
     }

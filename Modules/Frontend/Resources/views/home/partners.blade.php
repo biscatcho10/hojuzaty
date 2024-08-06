@@ -19,22 +19,13 @@
                     <div class="partners-slider">
                         <div class="slider swiper swiper-css-common">
                             <div class="swiper-wrapper">
-                                <!-- singl slide -->
-                                <div class="swiper-slide border-end rounded-0">
-                                    <img src="{{ asset('frontend/images/test/Logo.jpg') }}" alt="partners" />
-                                </div>
-                                <!-- singl slide -->
-                                <div class="swiper-slide border-end rounded-0">
-                                    <img src="{{ asset('frontend/images/test/Logo.jpg') }}" alt="partners" />
-                                </div>
-                                <!-- singl slide -->
-                                <div class="swiper-slide border-end rounded-0">
-                                    <img src="{{ asset('frontend/images/test/Logo.jpg') }}" alt="partners" />
-                                </div>
-                                <!-- singl slide -->
-                                <div class="swiper-slide border-end rounded-0">
-                                    <img src="{{ asset('frontend/images/test/Logo.jpg') }}" alt="partners" />
-                                </div>
+                                @forelse ($partners as $partner)
+                                    <!-- singl slide -->
+                                    <div class="swiper-slide border-end rounded-0">
+                                        <img src="{{ $partner->getImage() }}" alt="partner" />
+                                    </div>
+                                @empty
+                                @endforelse
                             </div>
                         </div>
                         <div class="swiper-button-group justify-content-end">

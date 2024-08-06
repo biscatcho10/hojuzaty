@@ -9,10 +9,7 @@ class PlaceTranslation extends Model
 {
     use HasFactory;
 
-    protected $fillable = [];
-    
-    protected static function newFactory()
-    {
-        return \Modules\Destinations\Database\factories\PlaceTranslationFactory::new();
-    }
+    protected $fillable = ['name', 'description'];
+
+    public $timestamps = false;
 }

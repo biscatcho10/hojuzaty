@@ -39,7 +39,7 @@ class DestinationRequest extends FormRequest
     public function createRules()
     {
         return RuleFactory::make([
-            'name' => ['required', 'string', 'max:255'],
+            '%name%' => ['required', 'string', 'max:255'],
         ]);
     }
 
@@ -51,7 +51,7 @@ class DestinationRequest extends FormRequest
     public function updateRules()
     {
         return RuleFactory::make([
-            'name' => ['required', 'string', 'max:255'],
+            '%name%' => ['required', 'string', 'max:255'],
         ]);
     }
 

@@ -12,5 +12,12 @@
 */
 
 Route::middleware('dashboard')->prefix('dashboard')->as('dashboard.')->group(function () {
+    // destinations
     Route::resource('destinations', 'DestinationsController');
+
+    // destination's places
+    Route::resource('destinations/{destination}/places', 'PlacesController');
+
+    // destination's bookings
+    Route::resource('destinations/{destination}/bookings', 'BookingsController')->only(['show']);
 });

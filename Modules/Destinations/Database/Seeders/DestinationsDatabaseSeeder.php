@@ -31,14 +31,24 @@ class DestinationsDatabaseSeeder extends Seeder
 
             $destination->save();
 
-            $destination->addMediaFromUrl($faker->imageUrl())->toMediaCollection('images');
+            // destination image
+            $destination->addMedia(__DIR__ . '/images/slider-' . rand(1, 4) . '.jpg')
+                ->preservingOriginal()
+                ->toMediaCollection('images');
 
-            $destination->addMediaFromUrl($faker->imageUrl())->toMediaCollection('covers');
+            // destination covers and gallery
+            for ($k = 1; $k <= 4; $k++) {
+                $destination->addMedia(__DIR__ . '/images/slider-' . $k . '.jpg')
+                ->preservingOriginal()
+                ->toMediaCollection('covers');
 
-            $destination->addMediaFromUrl($faker->imageUrl())->toMediaCollection('gallery');
+                $destination->addMedia(__DIR__ . '/images/slider-' . $k . '.jpg')
+                ->preservingOriginal()
+                ->toMediaCollection('gallery');
+            }
 
             // destination places
-            for ($j = 0; $j < 5; $j++) {
+            for ($n = 1; $n <= 4; $n++) {
                 $place = $destination->places()->create([
                     'created_at' => now(),
                     'updated_at' => now(),
@@ -50,7 +60,9 @@ class DestinationsDatabaseSeeder extends Seeder
                 }
 
                 // destination place images
-                $place->addMediaFromUrl($faker->imageUrl())->toMediaCollection('images');
+                $place->addMedia(__DIR__ . '/images/slider-' . rand(1, 4) . '.jpg')
+                    ->preservingOriginal()
+                    ->toMediaCollection('images');
 
                 $place->save();
             }

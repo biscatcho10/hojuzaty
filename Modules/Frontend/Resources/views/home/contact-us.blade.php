@@ -23,25 +23,26 @@
                     <div class="app-grid mt-2 mt-md-5">
                         <div class="card-contact">
                             <h4>&quot;Be Inspired&quot;</h4>
-                            <form action="">
+                            <form action="{{ route('contact.post') }}" method="POST">
+                                @csrf
                                 <div class="contact-form">
                                     <div class="input-group">
-                                        <input type="text" placeholder="First Name" />
+                                        <input type="text" name="first_name" placeholder="First Name" />
                                         <img src="{{ asset('frontend/images/icons/profile.svg') }}" alt="" />
                                     </div>
                                     <div class="input-group">
-                                        <input type="text" placeholder="Second Name" />
+                                        <input type="text" name="second_name" placeholder="Second Name" />
                                         <img src="{{ asset('frontend/images/icons/profile.svg') }}" alt="" />
                                     </div>
                                     <div class="input-group">
-                                        <input type="text" placeholder="Phone Number" />
+                                        <input type="tel" name="phone" placeholder="Phone" />
                                         <img src="{{ asset('frontend/images/icons/smartphone.svg') }}" alt="" />
                                     </div>
                                     <div class="input-group">
-                                        <input type="text" placeholder="Email" />
+                                        <input type="email" name="email" placeholder="Email" />
                                         <img src="{{ asset('frontend/images/icons/sms.svg') }}" alt="" />
                                     </div>
-                                    <textarea name="" id="" placeholder="Your Message"></textarea>
+                                    <textarea name="message" id="" placeholder="Your Message"></textarea>
                                     <button class="btn-primary mt-3 ms-auto">Send</button>
                                 </div>
                             </form>
@@ -55,21 +56,21 @@
                                     <img src="{{ asset('frontend/images/icons/calls.svg') }}" alt="" />
                                     <div>
                                         <p>Call Center</p>
-                                        <p>+999 999 9999</p>
+                                        <p>{{ Settings::get('phone') }}</p>
                                     </div>
                                 </div>
                                 <div class="item">
                                     <img src="{{ asset('frontend/images/icons/sms-two') }}.svg" alt="" />
                                     <div>
                                         <p>Email</p>
-                                        <p>Hojuzaty@support.com</p>
+                                        <p>{{ Settings::get('email') }}</p>
                                     </div>
                                 </div>
                                 <div class="item">
                                     <img src="{{ asset('frontend/images/icons/location.svg') }}" alt="" />
                                     <div>
                                         <p>Location</p>
-                                        <p>Mansoura, Egypt</p>
+                                        <p>{{ Settings::get('address') }}</p>
                                     </div>
                                 </div>
                             </div>

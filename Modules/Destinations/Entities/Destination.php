@@ -46,7 +46,7 @@ class Destination extends Model implements HasMedia
      * Get the main image for the destination.
      * @return string
      */
-    public function getMainImageAttribute() : string
+    public function getImage() : string
     {
         return $this->getFirstMediaUrl('images');
     }
@@ -56,7 +56,7 @@ class Destination extends Model implements HasMedia
      * Get the main cover for the destination.
      * @return string
      */
-    public function getCoverAttribute() : string
+    public function getCover() : string
     {
         return $this->getFirstMediaUrl('covers');
     }
@@ -65,7 +65,7 @@ class Destination extends Model implements HasMedia
     /**
      * Get the gallery images for the destination.
      */
-    public function getGalleryAttribute()
+    public function getGalleriesAttribute()
     {
         return $this->getMedia('gallery');
     }
