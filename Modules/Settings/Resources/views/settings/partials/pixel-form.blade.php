@@ -62,10 +62,30 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-12">
+            <div class="col-6">
                 <div class="form-group">
                     <label for="">@lang('settings::settings.attributes.transfer_line')</label>
                     <textarea type="text" name="transfer_line" class="form-control" rows="3"> {{ Settings::get('transfer_line') }} </textarea>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="">@lang('settings::settings.attributes.google_tag_manger')</label>
+                    <textarea type="text" name="google_tag_manger" class="form-control" rows="3"> {{ Settings::get('google_tag_manger') }} </textarea>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="">@lang('settings::settings.attributes.hotjar')</label>
+                    <textarea type="text" name="hotjar" class="form-control" rows="3"> {{ Settings::get('hotjar') }} </textarea>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="">@lang('settings::settings.attributes.linked_tag')</label>
+                    <textarea type="text" name="linked_tag" class="form-control" rows="3"> {{ Settings::get('linked_tag') }} </textarea>
                 </div>
             </div>
         </div>

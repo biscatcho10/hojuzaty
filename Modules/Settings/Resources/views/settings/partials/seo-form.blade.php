@@ -10,84 +10,6 @@
 
 
 <div class="accordion" id="accordionExample">
-
-    {{-- <div class="card">
-        <div class="card-header" id="heading1">
-            <h2 class="mb-0">
-                <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse"
-                    data-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
-                    # {{ __('Google analytics and Facebook pixel') }}
-                </button>
-            </h2>
-        </div>
-
-        <div id="collapse1" class="collapse" aria-labelledby="heading1" data-parent="#accordionExample">
-            <div class="card-body">
-
-                <div class="row mt-2">
-                    <div class="col-12">
-                        <div class="form-group">
-                            <label for="">@lang('settings::settings.attributes.facebook_pixel')</label>
-                            <textarea type="text" name="facebook_pixel" class="form-control" rows="3"> {{ Settings::get('facebook_pixel') }} </textarea>
-                        </div>
-                    </div>
-                </div>
-                <div class="row my-2">
-                    <div class="col-6">
-                        <div class="form-group">
-                            <label for="">@lang('settings::settings.attributes.google_id_header')</label>
-                            <textarea type="text" name="google_id_head" class="form-control" rows="3"> {{ Settings::get('google_id_head') }} </textarea>
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="form-group">
-                            <label for="">@lang('settings::settings.attributes.google_id_footer')</label>
-                            <textarea type="text" name="google_id_footer" class="form-control" rows="3"> {{ Settings::get('google_id_footer') }} </textarea>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-6">
-                        <div class="form-group">
-                            <label for="">@lang('settings::settings.attributes.track_code')</label>
-                            <textarea type="text" name="track_code" class="form-control" rows="3"> {{ Settings::get('track_code') }} </textarea>
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="form-group">
-                            <label for="">@lang('settings::settings.attributes.google_analects')</label>
-                            <textarea type="text" name="google_analects" class="form-control" rows="3"> {{ Settings::get('google_analects') }} </textarea>
-                        </div>
-                    </div>
-                </div>
-                <div class="row my-2">
-                    <div class="col-6">
-                        <div class="form-group">
-                            <label for="">@lang('settings::settings.attributes.btn_track_code')</label>
-                            <textarea type="text" name="btn_track_code" class="form-control" rows="3"> {{ Settings::get('btn_track_code') }} </textarea>
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="form-group">
-                            <label for="">@lang('settings::settings.attributes.btn_google_id_footer')</label>
-                            <textarea type="text" name="btn_google_id_footer" class="form-control" rows="3"> {{ Settings::get('btn_google_id_footer') }} </textarea>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12">
-                        <div class="form-group">
-                            <label for="">@lang('settings::settings.attributes.transfer_line')</label>
-                            <textarea type="text" name="transfer_line" class="form-control" rows="3"> {{ Settings::get('transfer_line') }} </textarea>
-                        </div>
-                    </div>
-                </div>
-
-
-            </div>
-        </div>
-    </div> --}}
-
     <div class="card">
         <div class="card-header" id="heading2">
             <h2 class="mb-0">
@@ -123,7 +45,7 @@
             <h2 class="mb-0">
                 <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse"
                     data-target="#collapse3" aria-expanded="true" aria-controls="collapse3">
-                    # {{ __('Services Page') }}
+                    # {{ __('About Page') }}
                 </button>
             </h2>
         </div>
@@ -133,16 +55,16 @@
 
                 <div class="row">
                     <div class="col-6">
-                        {{ BsForm::text('services_seo_title')->value(Settings::get('services_seo_title'))->label(__('Services SEO Title')) }}
+                        {{ BsForm::text('about_seo_title')->value(Settings::get('about_seo_title'))->label(__('About SEO Title')) }}
                     </div>
                     <div class="col-6">
-                        {{ BsForm::text('services_seo_keywords')->value(Settings::get('services_seo_keywords'))->label(__('Services SEO Keywords')) }}
+                        {{ BsForm::text('about_seo_keywords')->value(Settings::get('about_seo_keywords'))->label(__('About SEO Keywords')) }}
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-12">
-                        {{ BsForm::textarea('services_seo_description')->value(Settings::get('services_seo_description'))->rows(3)->label(__('Services SEO Description')) }}
+                        {{ BsForm::textarea('about_seo_description')->value(Settings::get('about_seo_description'))->rows(3)->label(__('About SEO Description')) }}
                     </div>
                 </div>
 
@@ -150,12 +72,12 @@
         </div>
     </div>
 
-    {{-- <div class="card">
+    <div class="card">
         <div class="card-header" id="heading4">
             <h2 class="mb-0">
                 <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse"
                     data-target="#collapse4" aria-expanded="true" aria-controls="collapse4">
-                    # {{ __('Project Page') }}
+                    # {{ __('Blogs Page') }}
                 </button>
             </h2>
         </div>
@@ -165,19 +87,82 @@
 
                 <div class="row">
                     <div class="col-6">
-                        {{ BsForm::text('project_seo_title')->value(Settings::get('project_seo_title'))->label(__('project SEO Title')) }}
+                        {{ BsForm::text('blogs_seo_title')->value(Settings::get('blogs_seo_title'))->label(__('Blogs SEO Title')) }}
                     </div>
                     <div class="col-6">
-                        {{ BsForm::text('project_seo_keywords')->value(Settings::get('project_seo_keywords'))->label(__('project SEO Keywords')) }}
+                        {{ BsForm::text('blogs_seo_keywords')->value(Settings::get('blogs_seo_keywords'))->label(__('Blogs SEO Keywords')) }}
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-12">
-                        {{ BsForm::textarea('project_seo_description')->value(Settings::get('project_seo_description'))->rows(3)->label(__('project SEO Description')) }}
+                        {{ BsForm::textarea('blogs_seo_description')->value(Settings::get('blogs_seo_description'))->rows(3)->label(__('Blogs SEO Description')) }}
                     </div>
                 </div>
             </div>
         </div>
-    </div> --}}
+    </div>
+
+    <div class="card">
+        <div class="card-header" id="heading5">
+            <h2 class="mb-0">
+                <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse"
+                    data-target="#collapse5" aria-expanded="true" aria-controls="collapse5">
+                    # {{ __('Destinations Page') }}
+                </button>
+            </h2>
+        </div>
+
+        <div id="collapse5" class="collapse" aria-labelledby="heading5" data-parent="#accordionExample">
+            <div class="card-body">
+
+                <div class="row">
+                    <div class="col-6">
+                        {{ BsForm::text('destinations_seo_title')->value(Settings::get('destinations_seo_title'))->label(__('Destinations SEO Title')) }}
+                    </div>
+                    <div class="col-6">
+                        {{ BsForm::text('destinations_seo_keywords')->value(Settings::get('destinations_seo_keywords'))->label(__('Destinations SEO Keywords')) }}
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                        {{ BsForm::textarea('destinations_seo_description')->value(Settings::get('destinations_seo_description'))->rows(3)->label(__('Destinations SEO Description')) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header" id="heading6">
+            <h2 class="mb-0">
+                <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse"
+                    data-target="#collapse6" aria-expanded="true" aria-controls="collapse6">
+                    # {{ __('Inquiry Page') }}
+                </button>
+            </h2>
+        </div>
+
+        <div id="collapse6" class="collapse" aria-labelledby="heading6" data-parent="#accordionExample">
+            <div class="card-body">
+
+                <div class="row">
+                    <div class="col-6">
+                        {{ BsForm::text('inquiry_seo_title')->value(Settings::get('inquiry_seo_title'))->label(__('Inquiry SEO Title')) }}
+                    </div>
+                    <div class="col-6">
+                        {{ BsForm::text('inquiry_seo_keywords')->value(Settings::get('inquiry_seo_keywords'))->label(__('Inquiry SEO Keywords')) }}
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                        {{ BsForm::textarea('inquiry_seo_description')->value(Settings::get('inquiry_seo_description'))->rows(3)->label(__('Inquiry SEO Description')) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>
