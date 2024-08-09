@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e957418b05e879ff5c28d60a2f5d10ef",
+    "content-hash": "4791d370cb934dc3b7af0e2a1efc4b52",
     "packages": [
         {
             "name": "ahmed-aliraqi/laravel-media-uploader",
@@ -2863,6 +2863,52 @@
                 "source": "https://github.com/kkszymanowski/traitor"
             },
             "time": "2018-04-19T12:24:36+00:00"
+        },
+        {
+            "name": "kongulov/interact-with-enum",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kongulov/interact-with-enum.git",
+                "reference": "89acf4725e0408a7c1945d239fdf519eb1076224"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kongulov/interact-with-enum/zipball/89acf4725e0408a7c1945d239fdf519eb1076224",
+                "reference": "89acf4725e0408a7c1945d239fdf519eb1076224",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Kongulov\\Traits\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ramiz Kongulov",
+                    "email": "ramiz.kongulov@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Trait for convenient use of ENUM in PHP",
+            "homepage": "https://github.com/kongulov/interact-with-enum",
+            "keywords": [
+                "enum",
+                "php"
+            ],
+            "support": {
+                "issues": "https://github.com/kongulov/interact-with-enum/issues",
+                "source": "https://github.com/kongulov/interact-with-enum/tree/1.0.0"
+            },
+            "time": "2023-06-28T19:30:17+00:00"
         },
         {
             "name": "lab404/laravel-impersonate",

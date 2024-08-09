@@ -25,6 +25,7 @@ return [
             'destinations' => 'c,r,u,d,s',
             'places' => 'c,r,u,d,s',
             'bookings' => 'c,r,u,d,s',
+            'notifications' => 'c,r,u,d,s',
             'contactus' => 'r,d,s',
             'subscribers' => 'r,d,s',
         ],

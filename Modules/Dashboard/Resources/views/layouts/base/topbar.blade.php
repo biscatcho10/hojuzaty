@@ -8,7 +8,7 @@
                 {{--full screen--}}
                 @include('dashboard::layouts.partials.topbar.full_screen')
                 {{--notifications--}}
-                {{--@include('dashboard::partials.notifications')--}}
+                @include('dashboard::layouts.partials.topbar.notifications')
                 {{--admin info--}}
                 @include('dashboard::layouts.partials.topbar.admin_info')
                 {{--side bar toggle--}}

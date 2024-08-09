@@ -86,7 +86,7 @@
         <div class="row">
             <div class="col-md-12">
                 @component('dashboard::layouts.components.box')
-                    @slot('title', __('destinations::bookings.plural'))
+                    @slot('title', __('inquiries::inquiries.latest'))
 
                     <div class="table-responsive">
                         <table class="table table-middle">
@@ -102,7 +102,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($destination->bookings as $booking)
+                                @foreach ($destination->bookings->take(10) as $booking)
                                     <tr>
                                         <td>{{ $booking->first_name . ' ' . $booking->second_name }}</td>
                                         <td>{{ $booking->phone }}</td>

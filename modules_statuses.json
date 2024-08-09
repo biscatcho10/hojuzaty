@@ -7,5 +7,7 @@
     "Partners": true,
     "News": true,
     "Sliders": true,
-    "Destinations": true
+    "Destinations": true,
+    "Notifications": true,
+    "Inquiries": true
 }

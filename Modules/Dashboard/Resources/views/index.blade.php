@@ -32,25 +32,21 @@
                     </div>
                 </div>
 
-                {{-- @include("dashboard::layouts.apps.statestics") --}}
+                @include('dashboard::layouts.apps.statestics')
 
 
-                <!-- Visitors Map -->
-                {{-- @include("dashboard::layouts.apps.vectoe-map") --}}
-                <!--/ Visitors Map -->
-
-                <!--/ chart -->
-                {{-- @include("dashboard::layouts.apps.chart") --}}
-                <!--/ chart -->
+                <!-- orders -->
+                @include('dashboard::layouts.data.orders')
+                <!--/ orders -->
 
                 <div class="row">
-                    <div class="col-lg-12">
-                        @include('dashboard::layouts.apps.inbox')
+                    <div class="col-lg-6">
+                        @include('dashboard::layouts.data.inbox')
                     </div>
 
-                    {{-- <div class="col-lg-8">
-                        @include('dashboard::layouts.apps.donations')
-                    </div> --}}
+                    <div class="col-lg-6">
+                        @include('dashboard::layouts.data.notifications')
+                    </div>
                 </div>
             </div>
         </div>

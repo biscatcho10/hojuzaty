@@ -5,8 +5,8 @@
                 <div class="row">
                     <div class="col-8">
                         <div>
-                            <p class="text-muted fw-medium mt-1 mb-2">{{ __('Projects') }}</p>
-                            <h4>{{ $projects_number }}</h4>
+                            <p class="text-muted fw-medium mt-1 mb-2">{{ __('Users') }}</p>
+                            <h4>{{ $users }}</h4>
                         </div>
                     </div>
 
@@ -79,7 +79,7 @@
                                                                 dominant-baseline="auto" font-size="12px"
                                                                 font-weight="400" fill="#373d3f"
                                                                 class="apexcharts-text apexcharts-datalabel-value"
-                                                                style="font-family: Helvetica, Arial, sans-serif;">{{ $projects_number }}</text>
+                                                                style="font-family: Helvetica, Arial, sans-serif;">{{ $users }}</text>
                                                         </g>
                                                     </g>
                                                 </g>
@@ -103,7 +103,7 @@
                     </div>
                 </div>
 
-                </span>{{ __('Total Number of Projects') }}</p>
+                </span>{{ __('Total Number of Users') }}</p>
             </div>
         </div>
     </div>
@@ -113,8 +113,8 @@
                 <div class="row">
                     <div class="col-8">
                         <div>
-                            <p class="text-muted fw-medium mt-1 mb-2">{{ __('Employees') }}</p>
-                            <h4>{{ $employees_number }}</h4>
+                            <p class="text-muted fw-medium mt-1 mb-2">{{ __('Destinations') }}</p>
+                            <h4>{{ $destinations }}</h4>
                         </div>
                     </div>
 
@@ -189,7 +189,7 @@
                                                                 dominant-baseline="auto" font-size="12px"
                                                                 font-weight="400" fill="#373d3f"
                                                                 class="apexcharts-text apexcharts-datalabel-value"
-                                                                style="font-family: Helvetica, Arial, sans-serif;">{{ $employees_number }}</text>
+                                                                style="font-family: Helvetica, Arial, sans-serif;">{{ $destinations }}</text>
                                                         </g>
                                                     </g>
                                                 </g>
@@ -213,7 +213,7 @@
                     </div>
                 </div>
 
-                </span>{{ __('Total Number of Employees') }}</p>
+                </span>{{ __('Total Number of Destinations') }}</p>
             </div>
         </div>
     </div>
@@ -223,8 +223,8 @@
                 <div class="row">
                     <div class="col-8">
                         <div>
-                            <p class="text-muted fw-medium mt-1 mb-2">{{ __('Clients') }}</p>
-                            <h4>{{ $client_number }}</h4>
+                            <p class="text-muted fw-medium mt-1 mb-2">{{ __('Partners') }}</p>
+                            <h4>{{ $partners }}</h4>
                         </div>
                     </div>
 
@@ -299,7 +299,7 @@
                                                                 dominant-baseline="auto" font-size="12px"
                                                                 font-weight="400" fill="#373d3f"
                                                                 class="apexcharts-text apexcharts-datalabel-value"
-                                                                style="font-family: Helvetica, Arial, sans-serif;">{{ $client_number }}</text>
+                                                                style="font-family: Helvetica, Arial, sans-serif;">{{ $partners }}</text>
                                                         </g>
                                                     </g>
                                                 </g>
@@ -323,7 +323,7 @@
                     </div>
                 </div>
 
-                </span>{{ __('Total Number of Clients') }}</p>
+                </span>{{ __('Total Number of Partners') }}</p>
             </div>
         </div>
     </div>

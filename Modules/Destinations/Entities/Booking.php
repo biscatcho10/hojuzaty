@@ -2,10 +2,12 @@
 
 namespace Modules\Destinations\Entities;
 
+use App\Http\Filters\Filterable;
 use Illuminate\Database\Eloquent\Model;
 
 class Booking extends Model
 {
+    use Filterable;
     protected $table = 'bookings';
 
     protected $fillable = [
@@ -30,12 +32,12 @@ class Booking extends Model
 
     /**
      * Get the full name of the booking.
-     * 
+     *
      * @return string
      */
     public function getNameAttribute()
     {
         return "{$this->first_name} {$this->second_name}";
     }
-    
+
 }

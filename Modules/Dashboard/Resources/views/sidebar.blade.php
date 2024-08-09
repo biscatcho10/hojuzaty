@@ -4,10 +4,13 @@
     @slot('icon', 'fas fa-layer-group')
     @slot('routeActive', 'dashboard.home')
 @endcomponent
+
 <!-- Admins -->
 @include('accounts::admins.sidebar')
 <!-- destinations -->
 @include('destinations::destinations.sidebar')
+<!-- inquires -->
+@include('inquiries::inquiries.sidebar')
 <!-- Partners -->
 @include('partners::partners.sidebar')
 <!-- News -->
@@ -16,6 +19,8 @@
 @include('sliders::sliders.sidebar')
 <!-- Contact Us -->
 @include('settings::contact-us.sidebar')
+<!-- Notifications -->
+@include('notifications::notifications.sidebar')
 <!-- About Us -->
 @include('settings::about-sidebar')
 <!-- settings -->
