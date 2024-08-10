@@ -8,7 +8,7 @@
                         <div class="calls">
                             <a href="tel:+{{ Settings::get('phone') }}" class="d-flex gap-1 font-vazirmatn">
                                 <img src="{{ asset('frontend/images/icons/call') }}-calling.svg" alt="call-icon" />
-                                Call Us Now
+                                @lang('Call Us Now')
                             </a>
                         </div>
                         <div class="lang-circle">
@@ -54,16 +54,14 @@
                     <div class="nav-links">
                         <div class="bg-before"></div>
                         <ul class="nav-content">
-                            <li><a href="{{ route('home') }}">Home</a></li>
+                            <li><a href="{{ route('home') }}" class="{{ request()->routeIS('home') ? 'active' : '' }}">@lang('Home')</a></li>
                             <li>
-                                <div>Destinations</div>
+                                <div>@lang('Destinations')</div>
                                 <ul class="sub-links">
                                     @forelse ($destinations as $destination)
                                         <li>
-                                            <a
-                                                href="{{ route('destination.details', $destination) }}">{{ $destination->name }}</a>
-                                            <img src="{{ asset('frontend/images/icons/arrow-right.svg') }}"
-                                                alt="arrow" />
+                                            <a href="{{ route('destination.details', $destination) }}">{{ $destination->name }}</a>
+                                            <img src="{{ asset('frontend/images/icons/arrow-right.svg') }}" alt="arrow" />
                                         </li>
                                     @empty
                                     @endforelse
@@ -71,11 +69,11 @@
                             </li>
                             <li class="nav-logo d-none d-lg-block">
                                 <a href="{{ route('home') }}">
-                                    <img src="{{ asset('frontend/images/logo.svg') }}" alt="" />
+                                    <img src="{{ asset('frontend/images/logo.svg') }}" alt="logo" />
                                 </a>
                             </li>
-                            <li><a href="{{ route('blogs') }}">Blogs</a></li>
-                            <li><a href="{{ route('about') }}">About Us</a></li>
+                            <li><a href="{{ route('blogs') }}" class="{{ request()->routeIS('blogs') ? 'active' : '' }}">@lang('Blogs')</a></li>
+                            <li><a href="{{ route('about') }}" class="{{ request()->routeIS('about') ? 'active' : '' }}">@lang('About Us')</a></li>
                         </ul>
                     </div>
                 </div>

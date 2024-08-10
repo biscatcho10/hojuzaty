@@ -1,0 +1,17 @@
+$primary: #5c2d91;
+$secondary: #92278f;
+$neutral: #3b4394;
+$bgOne: #f3f3f3;
+
+/******************************** start helper functions ********************************/
+@mixin transition_fun($duration: 0.3, $style: ease-in-out, $option: all) {
+  transition: $option $style $duration + s;
+}
+@mixin responsive($width, $minMax: max, $dir: width) {
+  @media all and (#{$minMax}-#{$dir}: #{$width}px) {
+    @content;
+  }
+}
+@mixin opacity-color($color, $opacity, $type) {
+  $type: rgba($color, $opacity);
+}

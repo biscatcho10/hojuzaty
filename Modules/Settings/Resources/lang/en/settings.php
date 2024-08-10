@@ -107,6 +107,7 @@ return [
         'our_mission' => 'Our Mission',
         'our_tasks' => 'Our Tasks',
         'why_chosse_us' => 'Why Choose Us',
+        'contact_us_desc' => 'Contact Us Description',
     ],
     'dialogs' => [
         'delete' => [

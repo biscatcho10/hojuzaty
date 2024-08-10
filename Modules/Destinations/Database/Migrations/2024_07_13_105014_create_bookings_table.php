@@ -21,6 +21,7 @@ class CreateBookingsTable extends Migration
             $table->string('phone');
             $table->date('check_in');
             $table->date('check_out');
+            $table->integer('days');
             $table->text('message')->nullable();
             $table->unsignedBigInteger('destination_id');
             $table->foreign('destination_id')->references('id')->on('destinations')->onDelete('cascade');

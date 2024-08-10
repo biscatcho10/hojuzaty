@@ -15,7 +15,7 @@ class ContactUsController extends Controller
      */
     public function index(Request $request)
     {
-        $data = ContactUs::latest()->paginate(10);
+        $data = ContactUs::latest('id')->paginate(10);
         return view('settings::contact-us.index', compact('data'));
     }
 

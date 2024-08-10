@@ -1,20 +1,20 @@
-<header style="background-image: url('{{ asset('frontend/images/destinations-details.jpeg') }}')" class="header-mini">
+<header style="background-image: url('{{ $destination->getCover() }}')" class="header-mini">
     <div class="container h-100">
         <div class="row h-100">
             <div class="col-12 d-flex flex-column h-100">
                 <!-- start brodcuramb -->
                 <nav style="--bs-breadcrumb-divider: '>'" aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item"><a href="#">Destinations</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Bali</li>
+                        <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
+                        <li class="breadcrumb-item"><a href="{{ route('destinations') }}">Destinations</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">{{ $destination->name }}</li>
                     </ol>
                 </nav>
 
                 <!-- start title page -->
                 <h1
                     class="custom-h1 text-center mt-0 flex-grow-1 d-flex align-items-center justify-content-center pb-lg-5">
-                    BALI
+                    {{ $destination->name }}
                 </h1>
             </div>
         </div>

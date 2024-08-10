@@ -11,7 +11,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title"
-                        id="modal-title-{{ $inquiry->id }}">@lang('inquiries::inquiries.dialogs.delete.name')</h5>
+                        id="modal-title-{{ $inquiry->id }}">@lang('inquiries::inquiries.dialogs.delete.title')</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>

@@ -1,49 +1,31 @@
-$primary: #5c2d91;
-$secondary: #92278f;
-$neutral: #3b4394;
-$bgOne: #f3f3f3;
-
 /******************************** start fonts ********************************/
-@import url("https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Vazirmatn:wght@100..900&display=swap");
+@import "./variable.scss";
 
 .font-vazirmatn {
-  font-family: "Vazirmatn", sans-serif;
+  font-family: "Vazirmatn", "Cairo", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
 }
 .font-amiri-regular {
-  font-family: "Amiri", serif;
+  font-family: "Amiri", "Almarai", serif;
   font-weight: 400;
   font-style: normal;
 }
 .font-amiri-bold {
-  font-family: "Amiri", serif;
+  font-family: "Amiri", "Almarai", serif;
   font-weight: 700;
   font-style: normal;
 }
 .font-amiri-regular-italic {
-  font-family: "Amiri", serif;
+  font-family: "Amiri", "Almarai", serif;
   font-weight: 400;
   font-style: italic;
 }
 .font-amiri-bold-italic {
-  font-family: "Amiri", serif;
+  font-family: "Amiri", "Almarai", serif;
   font-weight: 700;
   font-style: italic;
-}
-
-/******************************** start helper functions ********************************/
-@mixin transition_fun($duration: 0.3, $style: ease-in-out, $option: all) {
-  transition: $option $style $duration + s;
-}
-@mixin responsive($width, $minMax: max, $dir: width) {
-  @media all and (#{$minMax}-#{$dir}: #{$width}px) {
-    @content;
-  }
-}
-@mixin opacity-color($color, $opacity, $type) {
-  $type: rgba($color, $opacity);
 }
 
 /******************************** start class ********************************/
@@ -72,7 +54,7 @@ html {
   }
 }
 body {
-  font-family: "Amiri", serif;
+  font-family: "Amiri", "Almarai", serif;
   font-weight: 400;
 }
 a {
@@ -203,7 +185,7 @@ li {
   .top-nav {
     .top-nav-content {
       .calls {
-        font-family: Vazirmatn;
+        font-family: "Vazirmatn", "Cairo", sans-serif;
         font-size: 0.9rem;
         font-weight: 400;
         line-height: 21.88px;
@@ -238,7 +220,7 @@ li {
           color: #fff;
           border-radius: 50%;
           text-transform: uppercase;
-          font-family: Vazirmatn;
+          font-family: "Vazirmatn", "Cairo", sans-serif;
           font-size: 1rem;
           font-weight: 700;
           line-height: 1;
@@ -334,7 +316,7 @@ li {
         li {
           position: relative;
           & > * {
-            font-family: Amiri;
+            font-family: "Amiri", "Almarai", serif;
             font-size: 1.2rem;
             font-weight: 700;
             color: #fff;
@@ -522,7 +504,7 @@ li {
   background-color: $primary;
   transition: all ease-in-out 0.3s;
   min-width: 180px;
-  font-family: Vazirmatn;
+  font-family: "Vazirmatn", "Cairo", sans-serif;
   font-size: 1rem;
   font-weight: 700;
 
@@ -546,7 +528,7 @@ li {
   background: transparent;
   transition: all ease-in-out 0.3s;
   min-width: 180px;
-  font-family: Vazirmatn;
+  font-family: "Vazirmatn", "Cairo", sans-serif;
   font-size: 1rem;
   font-weight: 700;
 
@@ -575,7 +557,7 @@ li {
   }
 
   h2 {
-    font-family: Vazirmatn;
+    font-family: "Vazirmatn", "Cairo", sans-serif;
     font-size: 1.3rem;
     font-weight: 500;
     text-transform: capitalize;
@@ -599,7 +581,7 @@ li {
   }
 
   p {
-    font-family: "Amiri", serif;
+    font-family: "Amiri", "Almarai", serif;
     font-size: 2.6rem;
     font-weight: 700;
     position: relative;
@@ -658,7 +640,7 @@ section {
     transition: all ease-in-out 0.3s;
   }
   .breadcrumb-item {
-    font-family: Vazirmatn;
+    font-family: "Vazirmatn", "Cairo", sans-serif;
     font-size: 1rem;
     font-weight: 400;
 
@@ -797,19 +779,22 @@ header {
         }
         h1 {
           font-size: 5rem;
-          font-family: Amiri;
+          font-family: "Amiri", "Almarai", serif;
           font-style: italic;
           font-weight: 700;
           line-height: 1;
+          padding-inline-start: 20px;
+          padding-bottom: 10px;
         }
         p {
-          font-family: Vazirmatn;
+          font-family: "Vazirmatn", "Cairo", sans-serif;
           font-size: 1.2rem;
           font-weight: 400;
           max-width: 500px;
+          padding-inline-start: 20px;
         }
         a {
-          font-family: Vazirmatn;
+          font-family: "Vazirmatn", "Cairo", sans-serif;
           font-size: 1rem;
           font-weight: 700;
         }
@@ -893,7 +878,7 @@ header {
       z-index: 2;
 
       h1 {
-        font-family: Amiri;
+        font-family: "Amiri", "Almarai", serif;
         font-size: 3rem;
         font-weight: 700;
         color: #ffffff;
@@ -903,7 +888,7 @@ header {
 
         &.custom-h1 {
           margin-top: 45px;
-          font-family: Amiri;
+          font-family: "Amiri", "Almarai", serif;
           font-size: 5rem;
           background: linear-gradient(180deg, #ffffff 0%, #606060 200.77%);
           -webkit-background-clip: text;
@@ -950,18 +935,19 @@ header {
           max-width: max-content;
         }
         h3 {
-          font-family: Amiri;
+          font-family: "Amiri", "Almarai", serif;
           font-size: 3rem;
           font-weight: 700;
           line-height: 1;
           color: $primary;
+          padding-bottom: 15px;
 
           @include responsive(575) {
             font-size: 2rem;
           }
         }
         p {
-          font-family: Vazirmatn;
+          font-family: "Vazirmatn", "Cairo", sans-serif;
           font-size: 1.2rem;
           font-weight: 400;
           max-width: 500px;
@@ -972,7 +958,7 @@ header {
           }
         }
         a {
-          font-family: Vazirmatn;
+          font-family: "Vazirmatn", "Cairo", sans-serif;
           font-size: 1rem;
           font-weight: 700;
         }
@@ -1059,7 +1045,7 @@ header {
     width: max-content;
     margin: auto;
     color: #101228;
-    font-family: Amiri;
+    font-family: "Amiri", "Almarai", serif;
     font-size: 2rem;
     font-weight: 700;
     margin-top: 30px;
@@ -1093,7 +1079,7 @@ header {
     grid-template-columns: 1fr;
 
     h3 {
-      font-family: Amiri;
+      font-family: "Amiri", "Almarai", serif;
       font-size: 2rem;
       font-weight: 700;
       margin: auto;
@@ -1147,7 +1133,7 @@ header {
     margin-top: 25px;
   }
   h2 {
-    font-family: Amiri;
+    font-family: "Amiri", "Almarai", serif;
     font-size: 2rem;
     font-weight: 700;
     color: #101228;
@@ -1164,13 +1150,13 @@ header {
 
 #text-blog {
   h2 {
-    font-family: Amiri;
+    font-family: "Amiri", "Almarai", serif;
     font-size: 1.1rem;
     font-weight: 700;
     color: $neutral;
   }
   p {
-    font-family: Vazirmatn;
+    font-family: "Vazirmatn", "Cairo", sans-serif;
     font-size: 1.1rem;
     font-weight: 400;
     color: #090a14;
@@ -1190,7 +1176,7 @@ header {
   }
 
   h3 {
-    font-family: Vazirmatn;
+    font-family: "Vazirmatn", "Cairo", sans-serif;
     font-size: 20px;
     font-weight: 500;
     color: #05060a;
@@ -1200,7 +1186,7 @@ header {
   }
   p,
   small {
-    font-family: Vazirmatn;
+    font-family: "Vazirmatn", "Cairo", sans-serif;
     font-size: 1rem;
     font-weight: 400;
     line-height: 21.88px;
@@ -1220,7 +1206,7 @@ header {
     padding-top: 7px;
     background: #d0b9e9;
 
-    font-family: Vazirmatn;
+    font-family: "Vazirmatn", "Cairo", sans-serif;
     font-size: 0.8rem;
     font-weight: 400;
     line-height: 1;
@@ -1230,7 +1216,7 @@ header {
 #about {
   .about-text {
     p {
-      font-family: Vazirmatn;
+      font-family: "Vazirmatn", "Cairo", sans-serif;
       font-size: 1.2rem;
       font-weight: 400;
       color: #05060a;
@@ -1283,13 +1269,13 @@ header {
         justify-content: center;
 
         h3 {
-          font-family: Amiri;
+          font-family: "Amiri", "Almarai", serif;
           font-size: 3rem;
           font-weight: 700;
           color: $neutral;
         }
         p {
-          font-family: Vazirmatn;
+          font-family: "Vazirmatn", "Cairo", sans-serif;
           font-size: 1.1rem;
           font-weight: 400;
           color: #1e1e1e;
@@ -1378,7 +1364,7 @@ header {
     margin: auto;
   }
   h2 {
-    font-family: Amiri;
+    font-family: "Amiri", "Almarai", serif;
     font-size: 2.5rem;
     font-weight: 700;
     line-height: 1;
@@ -1388,7 +1374,7 @@ header {
     margin-bottom: 40px;
   }
   p {
-    font-family: Vazirmatn;
+    font-family: "Vazirmatn", "Cairo", sans-serif;
     font-size: 1.3rem;
     text-align: center;
     color: #05060a;
@@ -1445,7 +1431,7 @@ header {
     border-radius: 5px !important;
     padding: 10px;
     padding-top: 12px;
-    font-family: Vazirmatn;
+    font-family: "Vazirmatn", "Cairo", sans-serif;
     font-size: 0.9rem;
     font-weight: 400;
     line-height: 21.88px;
@@ -1463,7 +1449,7 @@ header {
     grid-template-columns: auto 1fr;
     align-items: center;
     gap: 7px;
-    font-family: Vazirmatn;
+    font-family: "Vazirmatn", "Cairo", sans-serif;
     font-size: 0.8rem;
     font-weight: 400;
 
@@ -1559,7 +1545,7 @@ header {
 
         h4 {
           text-align: center;
-          font-family: Amiri;
+          font-family: "Amiri", "Almarai", serif;
           font-size: 1.7rem;
           font-weight: 700;
           line-height: 49.22px;
@@ -1613,7 +1599,7 @@ header {
           align-content: center;
 
           h5 {
-            font-family: Amiri;
+            font-family: "Amiri", "Almarai", serif;
             font-size: 1.8rem;
             font-weight: 700;
             line-height: 49.22px;
@@ -1633,7 +1619,7 @@ header {
             p {
               margin-bottom: 0;
               color: #fff;
-              font-family: Vazirmatn;
+              font-family: "Vazirmatn", "Cairo", sans-serif;
               font-size: 0.8rem;
               font-weight: 400;
               line-height: 21.88px;
@@ -1644,14 +1630,14 @@ header {
     }
 
     p {
-      font-family: Vazirmatn;
+      font-family: "Vazirmatn", "Cairo", sans-serif;
       font-size: 20px;
       line-height: 32px;
       font-weight: 400;
 
       a {
         color: $primary;
-        font-family: Vazirmatn;
+        font-family: "Vazirmatn", "Cairo", sans-serif;
         font-weight: 600;
       }
 
@@ -1688,7 +1674,7 @@ footer {
 
   h3 {
     margin-bottom: 25px;
-    font-family: Amiri;
+    font-family: "Amiri", "Almarai", serif;
     font-size: 1.3rem;
     font-weight: 700;
     line-height: 32px;
@@ -1706,7 +1692,7 @@ footer {
       }
       a {
         color: #606060;
-        font-family: Vazirmatn;
+        font-family: "Vazirmatn", "Cairo", sans-serif;
         font-size: 14px;
         font-weight: 400;
         line-height: 21.88px;
@@ -1722,14 +1708,14 @@ footer {
 
   .location-footer {
     * {
-      font-family: Vazirmatn;
+      font-family: "Vazirmatn", "Cairo", sans-serif;
       font-size: 14px;
       font-weight: 400;
       line-height: 21.88px;
     }
 
     h3 {
-      font-family: Amiri;
+      font-family: "Amiri", "Almarai", serif;
       font-size: 20px;
       font-weight: 700;
       line-height: 32px;
@@ -1764,7 +1750,7 @@ footer {
       a {
         margin-bottom: 0;
         color: #606060;
-        font-family: Vazirmatn;
+        font-family: "Vazirmatn", "Cairo", sans-serif;
         font-size: 1rem;
         font-weight: 400;
         line-height: 21.88px;
@@ -1791,7 +1777,7 @@ footer {
 
     * {
       color: #fff;
-      font-family: Vazirmatn;
+      font-family: "Vazirmatn", "Cairo", sans-serif;
       font-size: 1rem;
       font-weight: 400;
       line-height: 25px;

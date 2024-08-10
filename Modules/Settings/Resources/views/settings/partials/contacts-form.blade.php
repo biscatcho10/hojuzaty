@@ -12,4 +12,4 @@
 {{ BsForm::text('email')->value(Settings::get('email')) }}
 {{ BsForm::text('phone')->value(Settings::get('phone')) }}
 {{ BsForm::text('mobile')->value(Settings::get('mobile')) }}
-{{ BsForm::text('fax')->value(Settings::get('fax')) }}
+{{ BsForm::text('call_center')->value(Settings::get('call_center')) }}

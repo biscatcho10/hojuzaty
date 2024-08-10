@@ -3,9 +3,9 @@
     <div class="header-slider-bg">
         <div class="slider swiper w-100">
             <div class="swiper-wrapper">
-                @forelse ($sliders as $slider)
+                @forelse ($destinations as $destination)
                     <div class="swiper-slide">
-                        <img src="{{ $slider->getImage() }}" alt="logo" />
+                        <img src="{{ $destination->getImage() }}" alt="logo" />
                     </div>
                 @empty
                 @endforelse
@@ -21,41 +21,18 @@
                     <div class="header-slider-text">
                         <div class="slider swiper w-100">
                             <div class="swiper-wrapper">
-                                <!-- singl slide -->
-                                <div class="swiper-slide">
-                                    <div class="position-relative overflow-hidden">
-                                        <h1 data-swiper-parallax-y="-100">Escape</h1>
+                                @forelse ($destinations as $destination)
+                                    <!-- singl slide -->
+                                    <div class="swiper-slide">
+                                        <div class="position-relative overflow-hidden">
+                                            <h1 data-swiper-parallax-y="-100">{{ $destination->name }}</h1>
+                                        </div>
+                                        <p>{!! $destination->description !!}</p>
+                                        <a href="{{ route('destination.details', $destination) }}"
+                                            class="btn-primary">@lang('Explore Now')</a>
                                     </div>
-                                    <p>1</p>
-                                    <a href="#" class="btn-primary">Explore Now</a>
-                                </div>
-
-                                <!-- singl slide -->
-                                <div class="swiper-slide">
-                                    <div class="position-relative overflow-hidden">
-                                        <h1 data-swiper-parallax-y="-100">Escape</h1>
-                                    </div>
-                                    <p>2</p>
-                                    <a href="#" class="btn-primary">Explore Now</a>
-                                </div>
-
-                                <!-- singl slide -->
-                                <div class="swiper-slide">
-                                    <div class="position-relative overflow-hidden">
-                                        <h1 data-swiper-parallax-y="-100">Escape</h1>
-                                    </div>
-                                    <p>3</p>
-                                    <a href="#" class="btn-primary">Explore Now</a>
-                                </div>
-
-                                <!-- singl slide -->
-                                <div class="swiper-slide">
-                                    <div class="position-relative overflow-hidden">
-                                        <h1 data-swiper-parallax-y="-100">Escape</h1>
-                                    </div>
-                                    <p>4</p>
-                                    <a href="#" class="btn-primary">Explore Now</a>
-                                </div>
+                                @empty
+                                @endforelse
                             </div>
                             <div class="swiper-pagination"></div>
                         </div>
@@ -65,22 +42,13 @@
                     <div class="header-slider-img">
                         <div class="slider swiper swiper-css-common">
                             <div class="swiper-wrapper">
-                                <!-- singl slide -->
-                                <div class="swiper-slide">
-                                    <img src="{{ asset('frontend/images/test/1-s.png') }}" />
-                                </div>
-                                <!-- singl slide -->
-                                <div class="swiper-slide">
-                                    <img src="{{ asset('frontend/images/test/1-s-bg.jpg') }}" />
-                                </div>
-                                <!-- singl slide -->
-                                <div class="swiper-slide">
-                                    <img src="{{ asset('frontend/images/test/2-s-bg.jpg') }}" />
-                                </div>
-                                <!-- singl slide -->
-                                <div class="swiper-slide">
-                                    <img src="{{ asset('frontend/images/test/2-s.png') }}" />
-                                </div>
+                                @forelse ($destinations as $destination)
+                                    <!-- singl slide -->
+                                    <div class="swiper-slide">
+                                        <img src="{{ $destination->getImage() }}" alt="{{ $destination->name }}"/>
+                                    </div>
+                                @empty
+                                @endforelse
                             </div>
                         </div>
                         <div class="swiper-pagination"></div>

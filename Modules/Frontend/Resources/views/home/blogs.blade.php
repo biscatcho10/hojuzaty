@@ -4,8 +4,12 @@
             <!-- start title -->
             <div class="col-12">
                 <div class="title">
-                    <h2>blogs</h2>
-                    <p>&quot;Explore Travel Tips and Hidden Gems&quot;</p>
+                    <h2>@lang('Blogs')</h2>
+                    @if ($lang == 'en')
+                        <p>&quot;Explore Travel Tips and Hidden Gems&quot;</p>
+                    @else
+                        <p>&quot;استكشف نصائح السفر والجواهر الخفية&quot;</p>
+                    @endif
                 </div>
             </div>
 

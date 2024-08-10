@@ -12,51 +12,22 @@
 
         <!-- start blogs card -->
         <div class="row">
-            <div class="col-md-6">
-                <div class="card-one">
-                    <div class="badg">Article</div>
-                    <img src="{{ asset('frontend/images/test/Img.jpg') }}" />
-                    <h3>test 1</h3>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Perspiciatis temporibus expedita deserunt quia
-                    </p>
-                    <small>4 Mins Read</small>
+            @forelse ($blogs as $blog)
+                <div class="col-md-6 mb-3">
+                    <a href="{{ route('blog.details', $blog) }}" class="card" style="border: none">
+                        <div class="card-one">
+                            <div class="badg">Article</div>
+                            <img src="{{ $blog->getImage() }}" alt="blog" />
+                            <h3>{{ $blog->title }}</h3>
+                            <p>
+                                {{ Str::limit($blog->content, 100) }}
+                            </p>
+                            <small>{{ $blog->created_at->diffForHumans() }}</small>
+                        </div>
+                    </a>
                 </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card-one">
-                    <img src="{{ asset('frontend/images/test/Img.jpg') }}" />
-                    <h3>test 1</h3>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Perspiciatis temporibus expedita deserunt quia
-                    </p>
-                    <small>4 Mins Read</small>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card-one">
-                    <img src="{{ asset('frontend/images/test/Img.jpg') }}" />
-                    <h3>test 1</h3>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Perspiciatis temporibus expedita deserunt quia
-                    </p>
-                    <small>4 Mins Read</small>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card-one">
-                    <img src="{{ asset('frontend/images/test/Img.jpg') }}" />
-                    <h3>test 1</h3>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Perspiciatis temporibus expedita deserunt quia
-                    </p>
-                    <small>4 Mins Read</small>
-                </div>
-            </div>
+            @empty
+            @endforelse
         </div>
     </div>
 </section>

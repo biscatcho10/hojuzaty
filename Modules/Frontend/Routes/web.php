@@ -28,9 +28,9 @@ Route::middleware(['frontend.locales'])->group(function () {
 
     Route::get('/destinations/{destination}', 'FrontendController@destinationDetails')->name('destination.details');
 
-    Route::get('/inquiry', 'FrontendController@inquiry')->name('inquiry');
+    Route::get('/inquiry/{destination}', 'FrontendController@inquiry')->name('inquiry');
 
-    Route::post('/inquiry', 'FrontendController@inquiryPost')->name('inquiry.post');
+    Route::post('/inquiry/{destination}', 'FrontendController@inquiryPost')->name('inquiry.post');
 
     Route::post('/contact', 'FrontendController@contactPost')->name('contact.post');
 

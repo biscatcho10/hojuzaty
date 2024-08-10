@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>hougzaty / destinations / details</title>
+    <title>hougzaty - {{ $destination->name }}</title>
 
     <!-- start SEO -->
     @include('frontend::includes.seo', ['page' => 'destination'])

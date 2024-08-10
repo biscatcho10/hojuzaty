@@ -28,6 +28,7 @@ return [
         'message' => 'رسالة',
         'check_in' => 'تاريخ الوصول',
         'check_out' => 'تاريخ المغادرة',
+        'days' => 'الأيام',
         'destination_id' => 'الوجهة',
         'created_at' => 'تاريخ الإنشاء',
     ],
@@ -39,4 +40,10 @@ return [
             'cancel' => 'إلغاء',
         ],
     ],
+    'notifications' => [
+        'new' => [
+            'subject' => 'استفسار جديد',
+            'body' => 'هناك استفسار جديد من :name علي :destination'
+        ]
+    ]
 ];

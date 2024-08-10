@@ -1,3 +1,6 @@
+// start direction
+let dir = document.body.getAttribute("dir");
+
 // nav links
 (() => {
   const menu = document.querySelector(".hamburger-menu");
@@ -21,6 +24,7 @@
     autoplay: {
       delay: 3000,
     },
+    changeLanguageDirection: "rtl",
   };
 
   let sliderText = new Swiper(".header-slider-text .slider", {

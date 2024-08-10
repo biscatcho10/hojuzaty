@@ -4,8 +4,12 @@
             <!-- start title -->
             <div class="col-12">
                 <div class="title">
-                    <h2>Top Destinations</h2>
-                    <p>&quot;Explore the Best Destinations on Earth!&quot;</p>
+                    <h2>@lang('Top Destinations')</h2>
+                    @if ($lang == 'en')
+                        <p>&quot;Explore the Best Destinations on Earth!&quot;</p>
+                    @else
+                        <p>&quot;استكشف أفضل الوجهات على الأرض!&quot;</p>  
+                    @endif
                 </div>
             </div>
 
@@ -26,7 +30,7 @@
                                         <p>
                                             {{ $destination->description }}
                                         </p>
-                                        <a href="{{ route('inquiry') }}" class="btn-primary">Explore Now</a>
+                                        <a href="{{ route('destination.details', $destination) }}" class="btn-primary">@lang('Explore Now')</a>
                                     </div>
                                 @empty
                                 @endforelse
@@ -39,11 +43,10 @@
                     <div class="destinations-slider-img">
                         <div class="slider swiper swiper-css-common">
                             <div class="swiper-wrapper">
-
                                 @forelse ($destinations as $destination)
                                     <!-- singl slide -->
                                     <div class="swiper-slide">
-                                        <img src="{{ $destination->getImage() }}" alt="destination" />
+                                        <img src="{{ $destination->getImage() }}" alt="{{ $destination->name }}" />
                                     </div>
                                 @empty
                                 @endforelse

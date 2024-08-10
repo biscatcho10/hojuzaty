@@ -25,7 +25,7 @@ class DestinationsDatabaseSeeder extends Seeder
             ]);
 
             foreach (['en', 'ar'] as $locale) {
-                $destination->translateOrNew($locale)->name = $faker->name;
+                $destination->translateOrNew($locale)->name = $faker->state;
                 $destination->translateOrNew($locale)->description = $faker->paragraph;
             }
 
@@ -55,7 +55,7 @@ class DestinationsDatabaseSeeder extends Seeder
                 ]);
 
                 foreach (['en', 'ar'] as $locale) {
-                    $place->translateOrNew($locale)->name = $faker->name;
+                    $place->translateOrNew($locale)->name = $faker->city;
                     $place->translateOrNew($locale)->description = $faker->paragraph;
                 }
 
@@ -69,13 +69,17 @@ class DestinationsDatabaseSeeder extends Seeder
 
             // destination bookings
             for ($j = 0; $j < 5; $j++) {
+                $checkIn = $faker->dateTimeBetween('now', '+1 years')->format('Y-m-d');
+                $checkOut = $faker->dateTimeBetween($checkIn, '+1 years')->format('Y-m-d');
+                $days = (strtotime($checkOut) - strtotime($checkIn)) / (60 * 60 * 24);
                 $destination->bookings()->create([
                     'first_name' => $faker->firstName,
                     'second_name' => $faker->lastName,
                     'email' => $faker->email,
                     'phone' => $faker->phoneNumber,
-                    'check_in' => $faker->dateTimeBetween('now', '+1 years')->format('Y-m-d'),
-                    'check_out' => $faker->dateTimeBetween($destination->check_in, '+1 years')->format('Y-m-d'),
+                    'check_in' => $checkIn,
+                    'check_out' => $checkOut,
+                    'days' => $days,
                     'message' => $faker->paragraph,
                 ]);
             }

@@ -17,6 +17,7 @@ class Booking extends Model
         'phone',
         'check_in',
         'check_out',
+        'days',
         'message',
         'destination_id',
     ];

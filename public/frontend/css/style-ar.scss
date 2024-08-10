@@ -1,0 +1,19 @@
+@import "./variable.scss";
+
+// title section
+.title {
+  h2 {
+    &::before {
+      transform: translateX(105%);
+      background-image: linear-gradient(to left, rgba(0, 0, 0, 0), $primary);
+    }
+  }
+}
+
+.contact-form .input-group img {
+  left: 10px;
+  right: auto;
+}
+
+.copyright {
+}

@@ -6,13 +6,17 @@
                     <div class="col-12">
                         <div class="top-nav-content d-flex gap-5 justify-content-end align-items-center pt-2">
                             <div class="calls">
-                                <a href="tel:+1234567890" class="d-flex gap-1 font-vazirmatn">
+                                <a href="tel:{{ Settings::get('phone') }}" class="d-flex gap-1 font-vazirmatn">
                                     <img src="{{ asset('frontend/images/icons/call-calling-1.svg') }}" alt="call-icon" />
                                     Call Us Now
                                 </a>
                             </div>
                             <div class="lang-circle">
-                                <a href="">en</a>
+                                @if (app()->getLocale() == 'ar')
+                                    <a href="{{ route('frontend.locale', 'en') }}">EN</a>
+                                @else
+                                    <a href="{{ route('frontend.locale', 'ar') }}">AR</a>
+                                @endif
                             </div>
                             <form action="/contact.html" class="search-form">
                                 <img src="{{ asset('frontend/images/icons/search-normal.svg') }}" alt="search-icon"
@@ -20,7 +24,8 @@
                                 <div class="search-input">
                                     <input type="text" />
                                     <button type="submit" class="bg-transparent border-0">
-                                        <img src="{{ asset('frontend/images/icons/search-normal.svg') }}" alt="search-icon" />
+                                        <img src="{{ asset('frontend/images/icons/search-normal.svg') }}"
+                                            alt="search-icon" />
                                     </button>
                                 </div>
                             </form>
@@ -49,58 +54,20 @@
                         <div class="nav-links">
                             <div class="bg-before"></div>
                             <ul class="nav-content">
-                                <li><a href="#">Home</a></li>
+                                <li><a href="{{ route('home') }}"
+                                        class="{{ request()->routeIS('home') ? 'active' : '' }}">Home</a></li>
                                 <li>
                                     <div>Destinations</div>
                                     <ul class="sub-links">
-                                        <li>
-                                            <a href="#">Destination 1</a>
-                                            <img src="{{ asset('frontend/images/icons/arrow-right.svg') }}" alt="" />
-                                        </li>
-                                        <li>
-                                            <a href="#">Destination 2</a>
-                                            <img src="{{ asset('frontend/images/icons/arrow-right.svg') }}" alt="" />
-                                        </li>
-                                        <li>
-                                            <a href="#">Destination 3</a>
-                                            <img src="{{ asset('frontend/images/icons/arrow-right.svg') }}" alt="" />
-                                        </li>
-                                        <li>
-                                            <a href="#">Destination 4</a>
-                                            <img src="{{ asset('frontend/images/icons/arrow-right.svg') }}" alt="" />
-                                        </li>
-                                        <li>
-                                            <a href="#">Destination 5</a>
-                                            <img src="{{ asset('frontend/images/icons/arrow-right.svg') }}" alt="" />
-                                        </li>
-                                        <li>
-                                            <a href="#">Destination 6</a>
-                                            <img src="{{ asset('frontend/images/icons/arrow-right.svg') }}" alt="" />
-                                        </li>
-                                        <li>
-                                            <a href="#">Destination 1</a>
-                                            <img src="{{ asset('frontend/images/icons/arrow-right.svg') }}" alt="" />
-                                        </li>
-                                        <li>
-                                            <a href="#">Destination 2</a>
-                                            <img src="{{ asset('frontend/images/icons/arrow-right.svg') }}" alt="" />
-                                        </li>
-                                        <li>
-                                            <a href="#">Destination 3</a>
-                                            <img src="{{ asset('frontend/images/icons/arrow-right.svg') }}" alt="" />
-                                        </li>
-                                        <li>
-                                            <a href="#">Destination 4</a>
-                                            <img src="{{ asset('frontend/images/icons/arrow-right.svg') }}" alt="" />
-                                        </li>
-                                        <li>
-                                            <a href="#">Destination 5</a>
-                                            <img src="{{ asset('frontend/images/icons/arrow-right.svg') }}" alt="" />
-                                        </li>
-                                        <li>
-                                            <a href="#">Destination 6</a>
-                                            <img src="{{ asset('frontend/images/icons/arrow-right.svg') }}" alt="" />
-                                        </li>
+                                        @forelse ($destinations as $destination)
+                                            <li>
+                                                <a
+                                                    href="{{ route('destination.details', $destination) }}">{{ $destination->name }}</a>
+                                                <img src="{{ asset('frontend/images/icons/arrow-right.svg') }}"
+                                                    alt="arrow" />
+                                            </li>
+                                        @empty
+                                        @endforelse
                                     </ul>
                                 </li>
                                 <li class="nav-logo d-none d-lg-block">
@@ -108,8 +75,10 @@
                                         <img src="{{ asset('frontend/images/logo-1.svg') }}" alt="" />
                                     </a>
                                 </li>
-                                <li><a href="#">Blogs</a></li>
-                                <li><a href="#">About Us</a></li>
+                                <li><a href="{{ route('blogs') }}"
+                                        class="{{ request()->routeIS('blogs') ? 'active' : '' }}">Blogs</a></li>
+                                <li><a href="{{ route('about') }}"
+                                        class="{{ request()->routeIS('about') ? 'active' : '' }}">About Us</a></li>
                             </ul>
                         </div>
                     </div>

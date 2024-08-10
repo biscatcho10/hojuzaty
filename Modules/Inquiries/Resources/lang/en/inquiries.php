@@ -28,6 +28,7 @@ return [
         'message' => 'Message',
         'check_in' => 'Check in',
         'check_out' => 'Check out',
+        'days' => 'Days',
         'destination_id' => 'Destination',
         'created_at' => 'Creation Date',
     ],
@@ -39,4 +40,10 @@ return [
             'cancel' => 'Cancel',
         ],
     ],
+    'notifications' => [
+        'new' => [
+            'subject' => 'New Inquiry',
+            'body' => 'There is a new Inquiry from :name in :destination',
+        ]
+    ]
 ];

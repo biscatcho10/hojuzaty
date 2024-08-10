@@ -30,7 +30,7 @@ class InquiriesRepository implements CrudRepository
      */
     public function all()
     {
-        return Booking::filter($this->filter)->paginate(request('perPage'));
+        return Booking::filter($this->filter)->latest('id')->paginate(request('perPage'));
     }
 
     /**

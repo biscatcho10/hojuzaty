@@ -18,7 +18,7 @@ class FrontendLocaleMiddleware
     {
         app()->setLocale(
             Session::get(
-                'locale',
+                'front_locale',
                 $request->get('language', app()->getLocale())
             )
         );

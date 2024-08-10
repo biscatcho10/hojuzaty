@@ -4,10 +4,13 @@
             <!-- start title -->
             <div class="col-12">
                 <div class="title">
-                    <h2>Our Partners</h2>
+                    <h2>@lang('Our Partners')</h2>
                     <p>
-                        &quot;Join Forces with the Best: Our Trusted Travel
-                        Partners&quot;
+                        @if ($lang == 'en')
+                            &quot;Join Forces with the Best: Our Trusted Travel Partners&quot;
+                        @else
+                            &quot;انضم إلى القوى الأفضل: شركاء السفر الموثوق بهم&quot;    
+                        @endif
                     </p>
                 </div>
             </div>

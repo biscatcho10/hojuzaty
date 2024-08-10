@@ -42,25 +42,21 @@ class InquiriesController extends Controller
 
     /**
      * Display the specified resource.
-     *
-     * @param Booking $booking
      * @return View
      */
-    public function show(Booking $booking)
+    public function show(int $booking)
     {
-        $inquiry = $this->repository->find($booking);
-
+        $inquiry = Booking::find($booking);
         return view('inquiries::inquiries.show', compact('inquiry'));
     }
 
 
     /**
      * Remove the specified resource from storage.
-     * @param Booking $booking
      */
-    public function destroy(Booking $booking)
+    public function destroy(int $booking)
     {
-        $this->repository->delete($booking);
+        Booking::find($booking)->delete();
 
         flash(trans('inquiries::inquiries.messages.deleted'))->error();
 

@@ -33,6 +33,7 @@ return [
         'phone' => 'Phone',
         'check_in' => 'Check In',
         'check_out' => 'Check Out',
+        'days' => 'Days',
         'message' => 'Message',
         'created_at' => 'Creation Date',
     ],

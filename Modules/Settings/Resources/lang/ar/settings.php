@@ -107,6 +107,7 @@ return [
         'our_mission' => 'مهمتنا',
         'our_tasks' => 'مهامنا',
         'why_chosse_us' => 'لماذا تختارنا',
+        'contact_us_desc' => 'وصف اتصل بنا',
     ],
     'dialogs' => [
         'delete' => [

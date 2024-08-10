@@ -40,6 +40,10 @@
                                 <td>{{ $booking->check_out }}</td>
                             </tr>
                             <tr>
+                                <th width="200">@lang('destinations::bookings.attributes.days')</th>
+                                <td>{{ $booking->days }}</td>
+                            </tr>
+                            <tr>
                                 <th width="200">@lang('destinations::bookings.attributes.message')</th>
                                 <td>{{ $booking->message }}</td>
                             </tr>

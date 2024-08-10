@@ -15,7 +15,7 @@
     <!-- end css -->
 </head>
 
-<body>
+<body dir="{{ $lang == 'ar' ? 'rtl' : 'ltr' }}"></body>
     <!-- start nav -->
     @include('frontend::includes.nav')
     <!-- end nav -->

@@ -9,26 +9,15 @@
                 <div class="card py-4">
                     <!-- start title -->
                     <h2 class="border-red">“Our Mission + Vision”</h2>
-                    <p class="">
-                        • Create life-long clients through perfectly planned itineraries
-                        customized to client style.
-                    </p>
                     <p>
-                        • Be an advocate for local cultures and empowering clients to
-                        respect their hosting destinations.
+                        {!! Settings::locale($lang)->get('our_mission') !!}
                     </p>
                     <p class="border-red">
                         • Cultivate collaborative relationships of mutual benefit and
                         respect between travel designers and clients.
                     </p>
                     <p>
-                        • Become the first choice in travel planning, due to our focus
-                        on creating value and providing educational insight.
-                    </p>
-                    <p>
-                        • Consistently create a collaborative relationship with our
-                        clients, that allows for them to fully trust our selections
-                        knowing that we genuinely have their best interests in mind.
+                        {!! Settings::locale($lang)->get('our_vision') !!}
                     </p>
                 </div>
             </div>

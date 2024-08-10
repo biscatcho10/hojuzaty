@@ -34,6 +34,6 @@
     <!-- end footer -->
 </body>
 
-@include('frontend::includes.scripts', ['page' => 'blog'])
+@include('frontend::includes.scripts', ['page' => 'inquiry'])
 
 </html>

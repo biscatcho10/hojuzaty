@@ -17,7 +17,7 @@ class LocaleController extends Controller
      */
     public function update($locale)
     {
-        Session::put('locale', $locale);
+        Session::put('front_locale', $locale);
 
         return back();
     }

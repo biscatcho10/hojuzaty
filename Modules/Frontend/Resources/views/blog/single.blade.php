@@ -8,7 +8,7 @@
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
                         <li class="breadcrumb-item"><a href="#">Blogs</a></li>
                         <li class="breadcrumb-item active" aria-current="page">
-                            10 Hidden Gems You Must Visit in 2024
+                            {{ $blog->title }}
                         </li>
                     </ol>
                 </nav>
@@ -19,7 +19,7 @@
         <div class="row">
             <div class="col-12">
                 <img src="{{ asset('frontend/images/test/blog-1.jpg') }}" alt="" class="ratio ratio-16x9 blog-img" />
-                <h2>Wanderlust Diaries: A Journey Through the Unexpected</h2>
+                <h2> {{ $blog->title }}</h2>
             </div>
         </div>
     </div>

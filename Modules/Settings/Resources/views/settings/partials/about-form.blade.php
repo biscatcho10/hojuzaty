@@ -98,6 +98,27 @@
                 </div>
             </div>
         </div>
+        <div class="card">
+            <div class="card-header" id="headingFour">
+                <h2 class="mb-0">
+                    <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse"
+                        data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        @lang('settings::settings.attributes.contact_us_desc')
+                    </button>
+                </h2>
+            </div>
+            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            @bsMultilangualFormTabs
+                                {{ BsForm::textarea('contact_us_desc')->required()->attribute('class', 'form-control textarea')->rows(4)->value(Settings::locale($locale->code)->get('contact_us_desc'))->attribute(['data-parsley-minlength' => '3'])->label(__('settings::settings.attributes.contact_us_desc')) }}
+                            @endBsMultilangualFormTabs
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
 </div>

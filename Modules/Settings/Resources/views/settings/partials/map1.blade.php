@@ -12,6 +12,11 @@
 <div class="card-body">
     @if ((Settings::get('latitude1') != null) & (Settings::get('longitude1') != null))
         <div class="form-group">
+            <label>@lang('Address')</label>
+            <input type="text" name="address" class="form-control" value="{{ Settings::get('address') }}">
+        </div>
+
+        <div class="form-group">
             <label for="address_address">
                 {{ __('Map Address') }}
             </label>
@@ -24,6 +29,10 @@
             <div style="width: 100%; height: 100%" id="address-map"></div>
         </div>
     @else
+        <div class="form-group">
+            <label>@lang('Address')</label>
+            <input type="text" name="address" class="form-control" value="{{ Settings::get('address') }}">
+        </div>
         <div class="form-group">
             <label for="address_address">
                 {{ __('Map Address') }}

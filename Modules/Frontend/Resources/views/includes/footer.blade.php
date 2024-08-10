@@ -10,23 +10,23 @@
 
                 <div class="contact-footer">
                     <div class="item">
-                        <img src="{{ asset('frontend/images/icons/whats-app.svg') }}" alt="" />
+                        <img src="{{ asset('frontend/images/icons/whats-app.svg') }}" alt="whats-app" />
                         <div>
-                            <p>Whatsapp</p>
-                            <a href="https://wa.me/{{ settings::get('whatsapp') }}">{{ settings::get('whatsapp') }}</a>
+                            <p>@lang('Whatsapp')</p>
+                            <a href="https://wa.me/{{ settings::get('whats_app') }}">{{ settings::get('whats_app') }}</a>
                         </div>
                     </div>
                     <div class="item">
-                        <img src="{{ asset('frontend/images/icons/sms-3.svg') }}" alt="" />
+                        <img src="{{ asset('frontend/images/icons/sms-3.svg') }}" alt="sms-3" />
                         <div>
-                            <p>Email</p>
+                            <p>@lang('Email')</p>
                             <a href="mailto:Hojuzaty@support.com">{{ Settings::get('email') }}</a>
                         </div>
                     </div>
                     <div class="item">
-                        <img src="{{ asset('frontend/images/icons/call-calling-2.svg') }}" alt="" />
+                        <img src="{{ asset('frontend/images/icons/call-calling-2.svg') }}" alt="call-calling-2" />
                         <div>
-                            <p>Call Center</p>
+                            <p>@lang('Call Center')</p>
                             <a href="tel:+201553760719">{{ Settings::get('phone') }}</a>
                         </div>
                     </div>
@@ -34,57 +34,27 @@
             </div>
 
             <div class="col-6 col-sm-3 col-md-3">
-                <h3 class="m-w-w">Company</h3>
+                <h3 class="m-w-w">@lang('Company')</h3>
                 <ul>
                     <li>
-                        <a href="{{ route('about') }}">About Us</a>
+                        <a href="{{ route('about') }}">@lang('About Us')</a>
                     </li>
                     <li>
-                        <a href="{{ route('blogs') }}">Blogs</a>
+                        <a href="{{ route('blogs') }}">@lang('Blogs')</a>
                     </li>
                 </ul>
             </div>
 
             <div class="col-6 col-sm-3 col-md-3">
-                <h3 class="m-w-w">Destinations</h3>
-                <div class="d-lg-flex gap-3">
-                    {{-- <ul>
-                        <li>
-                            <a href="/about-Us">Destination 1</a>
-                        </li>
-                        <li>
-                            <a href="/Blogs">Destination 2</a>
-                        </li>
-                        <li>
-                            <a href="/about-Us">Destination 3</a>
-                        </li>
-                        <li>
-                            <a href="/Blogs">Destination 4</a>
-                        </li>
-                    </ul>
-                    <ul>
-                        <li>
-                            <a href="/about-Us">Destination 5</a>
-                        </li>
-                        <li>
-                            <a href="/Blogs">Destination 6</a>
-                        </li>
-                        <li>
-                            <a href="/about-Us">Destination 7</a>
-                        </li>
-                        <li>
-                            <a href="/Blogs">Destination 8</a>
-                        </li>
-                    </ul> --}}
-
+                <h3 class="m-w-w">@lang('Destinations')</h3>
+                <div class="d-lg-flex">
                     <!-- loop on ul every 4 li -->
                     @for ($i = 0; $i < count($destinations); $i++)
                         @if ($i % 4 == 0)
                             <ul>
                                 @for ($j = $i; $j < $i + 4 && $j < count($destinations); $j++)
                                     <li>
-                                        <a
-                                            href="{{ route('destination', $destinations[$j]->id) }}">{{ $destinations[$j]->name }}</a>
+                                        <a href="{{ route('destination.details', $destinations[$j]->id) }}">{{ $destinations[$j]->name }}</a>
                                     </li>
                                 @endfor
                             </ul>
@@ -94,31 +64,29 @@
             </div>
 
             <div class="col-sm-12 col-md-3">
-                <h3 class="m-w-w">Location</h3>
+                <h3 class="m-w-w">@lang('Location')</h3>
                 <div class="location-footer">
                     <div class="d-flex gap-2">
-                        <img src="{{ asset('frontend/images/icons/location-1.svg') }}" alt="" />
-                        Location
+                        <img src="{{ asset('frontend/images/icons/location-1.svg') }}" alt="location-1" />
+                        @lang('Location')
                     </div>
-                    <iframe class="h-100 rounded-3 mt-4"
-                        src="https://maps.google.com/maps?q=31.046991063961336,31.364915406262934&z=15&output=embed"
-                        width="100%" height="270" style="border: 0" allowfullscreen=""></iframe>
+                    <iframe class="h-100 rounded-3 mt-4" src="https://maps.google.com/maps?q={{ Settings::get('latitude1') . ',' .Settings::get('longitude1') }}&z=15&output=embed" width="100%" height="270" style="border: 0" allowfullscreen=""></iframe>
 
-                    <h3 class="my-2">Follow Us</h3>
+                    <h3 class="my-2">@lang('Follow Us')</h3>
                     <div class="d-flex gap-2 icons">
                         <div class="single-icon">
                             <a href="{{ Settings::get('instagram') }}">
-                                <img src="{{ asset('frontend/images/icons/instagram.svg') }}" alt="" />
+                                <img src="{{ asset('frontend/images/icons/instagram.svg') }}" alt="instagram" />
                             </a>
                         </div>
                         <div class="single-icon">
                             <a href="{{ Settings::get('youtube') }}">
-                                <img src="{{ asset('frontend/images/icons/youtube.svg') }}" alt="" />
+                                <img src="{{ asset('frontend/images/icons/youtube.svg') }}" alt="youtube" />
                             </a>
                         </div>
                         <div class="single-icon">
                             <a href="{{ Settings::get('facebook') }}">
-                                <img src="{{ asset('frontend/images/icons/facebook.svg') }}" alt="" />
+                                <img src="{{ asset('frontend/images/icons/facebook.svg') }}" alt="facebook" />
                             </a>
                         </div>
                     </div>
@@ -129,10 +97,10 @@
 
     <!-- start copyright -->
     <div class="copyright">
-        <div class="pe-3 me-3 border-end">
-            <img src="{{ asset('frontend/images/icons/clock.svg') }}" alt="" />
-            Working Time
-        </div>
-        <div>2024 Hojuzaty. All Rights Reserved</div>
+        {{-- <div class="pe-3 me-3 border-end">
+            <img src="{{ asset('frontend/images/icons/clock.svg') }}" alt="clock" />
+            @lang('Working Time')
+        </div> --}}
+        <div>@lang('2024 Hojuzaty. All Rights Reserved')</div>
     </div>
 </footer>

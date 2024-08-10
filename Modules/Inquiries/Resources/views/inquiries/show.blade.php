@@ -1,11 +1,11 @@
 @extends('dashboard::layouts.default')
 
 @section('title')
-    {{ $inquiry->title }}
+    {{ $inquiry->name }}
 @endsection
 @section('content')
     @component('dashboard::layouts.components.page')
-        @slot('title', $inquiry->title)
+        @slot('title', $inquiry->name)
         @slot('breadcrumbs', ['dashboard.inquiries.show', $inquiry])
 
         <div class="row">
@@ -19,6 +19,13 @@
                                 <th>@lang('inquiries::inquiries.attributes.name')</th>
                                 <td>{{ $inquiry->name }}</td>
                             </tr>
+                            <tr>
+                                <th>@lang('inquiries::inquiries.attributes.destination_id')</th>
+                                <td>
+                                    <a href="{{ route('dashboard.destinations.show', $inquiry->destination) }}">
+                                        {{ $inquiry->destination->name }}
+                                    </a>
+                                </td>
                             <tr>
                                 <th>@lang('inquiries::inquiries.attributes.email')</th>
                                 <td>{{ $inquiry->email }}</td>
@@ -34,6 +41,10 @@
                             <tr>
                                 <th>@lang('inquiries::inquiries.attributes.check_out')</th>
                                 <td>{{ $inquiry->check_out }}</td>
+                            </tr>
+                            <tr>
+                                <th>@lang('inquiries::inquiries.attributes.days')</th>
+                                <td>{{ $inquiry->days }}</td>
                             </tr>
                             <tr>
                                 <th>@lang('inquiries::inquiries.attributes.message')</th>

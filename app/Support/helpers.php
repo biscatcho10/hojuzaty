@@ -329,3 +329,8 @@ function time_difference($start)
     }
     return false;
 }
+
+function isExist($model, $id)
+{
+    return $model::where('id', $id)->exists();
+}

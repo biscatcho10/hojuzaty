@@ -16,65 +16,23 @@
                     <div class="destinations-slider-text">
                         <div class="slider swiper w-100">
                             <div class="swiper-wrapper">
-                                <!-- singl slide -->
-                                <div class="swiper-slide">
-                                    <div class="position-relative overflow-hidden">
-                                        <h3 data-swiper-parallax-y="-100">Bali</h3>
-                                    </div>
-                                    <p>
-                                        Lorem Ipsum is simply dummy text of the printing and
-                                        typesetting industry. Lorem Ipsum has been the
-                                        industry's standard dummy text ever since the 1500s,
-                                        when an unknown printer took a galley of type and
-                                        scrambled it.
-                                    </p>
-                                    <a href="#" class="btn-primary">Explore Now</a>
-                                </div>
 
-                                <!-- singl slide -->
-                                <div class="swiper-slide">
-                                    <div class="position-relative overflow-hidden">
-                                        <h3 data-swiper-parallax-y="-100">Escape</h3>
+                                @forelse ($destinations as $destination)
+                                    <!-- singl slide -->
+                                    <div class="swiper-slide">
+                                        <div class="position-relative overflow-hidden">
+                                            <h3 data-swiper-parallax-y="-100">
+                                                {{ $destination->name }}
+                                            </h3>
+                                        </div>
+                                        <p>
+                                            {{ Str::limit($destination->description, 100) }}
+                                        </p>
+                                        <a href="{{ route('destination.details', $destination) }}"
+                                            class="btn-primary">@lang('Explore Now')</a>
                                     </div>
-                                    <p>
-                                        Lorem Ipsum is simply dummy text of the printing and
-                                        typesetting industry. Lorem Ipsum has been the
-                                        industry's standard dummy text ever since the 1500s,
-                                        when an unknown printer took a galley of type and
-                                        scrambled it.
-                                    </p>
-                                    <a href="#" class="btn-primary">Explore Now</a>
-                                </div>
-
-                                <!-- singl slide -->
-                                <div class="swiper-slide">
-                                    <div class="position-relative overflow-hidden">
-                                        <h3 data-swiper-parallax-y="-100">Escape</h3>
-                                    </div>
-                                    <p>
-                                        Lorem Ipsum is simply dummy text of the printing and
-                                        typesetting industry. Lorem Ipsum has been the
-                                        industry's standard dummy text ever since the 1500s,
-                                        when an unknown printer took a galley of type and
-                                        scrambled it.
-                                    </p>
-                                    <a href="#" class="btn-primary">Explore Now</a>
-                                </div>
-
-                                <!-- singl slide -->
-                                <div class="swiper-slide">
-                                    <div class="position-relative overflow-hidden">
-                                        <h3 data-swiper-parallax-y="-100">Escape</h3>
-                                    </div>
-                                    <p>
-                                        Lorem Ipsum is simply dummy text of the printing and
-                                        typesetting industry. Lorem Ipsum has been the
-                                        industry's standard dummy text ever since the 1500s,
-                                        when an unknown printer took a galley of type and
-                                        scrambled it.
-                                    </p>
-                                    <a href="#" class="btn-primary">Explore Now</a>
-                                </div>
+                                @empty
+                                @endforelse
                             </div>
                         </div>
                     </div>
@@ -83,22 +41,13 @@
                     <div class="destinations-slider-img">
                         <div class="slider swiper swiper-css-common">
                             <div class="swiper-wrapper">
-                                <!-- singl slide -->
-                                <div class="swiper-slide">
-                                    <img src="{{ asset('frontend/images/test/1-s.png') }}" alt="" />
-                                </div>
-                                <!-- singl slide -->
-                                <div class="swiper-slide">
-                                    <img src="{{ asset('frontend/images/test/1-s-bg.jpg') }}" alt="" />
-                                </div>
-                                <!-- singl slide -->
-                                <div class="swiper-slide">
-                                    <img src="{{ asset('frontend/images/test/2-s-bg.jpg') }}" alt="" />
-                                </div>
-                                <!-- singl slide -->
-                                <div class="swiper-slide">
-                                    <img src="{{ asset('frontend/images/test/2-s.png') }}" alt="" />
-                                </div>
+                                @forelse ($destinations as $destination)
+                                    <!-- singl slide -->
+                                    <div class="swiper-slide">
+                                        <img src="{{ $destination->getImage() }}" alt="{{ $destination->name }}" />
+                                    </div>
+                                @empty
+                                @endforelse
                             </div>
                         </div>
                         <div class="swiper-button-group">
