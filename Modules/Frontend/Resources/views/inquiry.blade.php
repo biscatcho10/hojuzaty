@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>hougzaty / inquiry</title>
-
+    <link rel="icon" href="{{ app_favicon() }}" type="image/x-icon" />
     <!-- start SEO -->
     @include('frontend::includes.seo', ['page' => 'inquiry'])
     <!-- end SEO -->
