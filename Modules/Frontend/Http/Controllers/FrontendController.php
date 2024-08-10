@@ -21,6 +21,7 @@ class FrontendController extends Controller
 
     public function __construct(NotificationsService $service)
     {
+        Session::put('front_locale', 'en');
         $this->service = $service;
         view()->share([
             'partners' => Partner::get(),

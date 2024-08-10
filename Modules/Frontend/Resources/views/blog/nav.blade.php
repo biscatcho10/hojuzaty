@@ -8,7 +8,7 @@
                             <div class="calls">
                                 <a href="tel:{{ Settings::get('phone') }}" class="d-flex gap-1 font-vazirmatn">
                                     <img src="{{ asset('frontend/images/icons/call-calling-1.svg') }}" alt="call-icon" />
-                                    Call Us Now
+                                    @lang('Call Us Now')
                                 </a>
                             </div>
                             <div class="lang-circle">
@@ -18,7 +18,7 @@
                                     <a href="{{ route('frontend.locale', 'ar') }}">AR</a>
                                 @endif
                             </div>
-                            <form action="/contact.html" class="search-form">
+                            {{-- <form action="/contact.html" class="search-form">
                                 <img src="{{ asset('frontend/images/icons/search-normal.svg') }}" alt="search-icon"
                                     class="search-icon" />
                                 <div class="search-input">
@@ -28,7 +28,7 @@
                                             alt="search-icon" />
                                     </button>
                                 </div>
-                            </form>
+                            </form> --}}
                         </div>
                     </div>
                 </div>
@@ -55,9 +55,10 @@
                             <div class="bg-before"></div>
                             <ul class="nav-content">
                                 <li><a href="{{ route('home') }}"
-                                        class="{{ request()->routeIS('home') ? 'active' : '' }}">Home</a></li>
+                                        class="{{ request()->routeIS('home') ? 'active' : '' }}">@lang('Home')</a>
+                                </li>
                                 <li>
-                                    <div>Destinations</div>
+                                    <div>@lang('Destinations')</div>
                                     <ul class="sub-links">
                                         @forelse ($destinations as $destination)
                                             <li>
@@ -76,9 +77,11 @@
                                     </a>
                                 </li>
                                 <li><a href="{{ route('blogs') }}"
-                                        class="{{ request()->routeIS('blogs') ? 'active' : '' }}">Blogs</a></li>
+                                        class="{{ request()->routeIS('blogs') ? 'active' : '' }}">@lang('Blogs')</a>
+                                </li>
                                 <li><a href="{{ route('about') }}"
-                                        class="{{ request()->routeIS('about') ? 'active' : '' }}">About Us</a></li>
+                                        class="{{ request()->routeIS('about') ? 'active' : '' }}">@lang('About Us')</a>
+                                </li>
                             </ul>
                         </div>
                     </div>

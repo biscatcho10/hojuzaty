@@ -15,8 +15,8 @@
     <!-- end css -->
 </head>
 
-<body class="single-page">
-    
+<body class="single-page" dir="{{ $lang == 'ar' ? 'rtl' : 'ltr' }}">
+
     <!-- start nav -->
     @include('frontend::blog.nav')
     <!-- end nav -->

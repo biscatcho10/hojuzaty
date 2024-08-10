@@ -4,7 +4,7 @@
             <!-- start title -->
             <div class="col-12">
                 <div class="title">
-                    <h2>Tours</h2>
+                    <h2>@lang('Tours')</h2>
                     <p>
                         @if ($lang == 'en')
                             “{{ $destination->name }}: Unveil Paradise with our Extraordinary Tours.”

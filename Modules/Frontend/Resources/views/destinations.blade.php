@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>hougzaty / destinations</title>
+    <title>hougzaty - destinations</title>
 
     <!-- start SEO -->
     @include('frontend::includes.seo', ['page' => 'destinations'])
@@ -15,7 +15,7 @@
     <!-- end css -->
 </head>
 
-<body>
+<body dir="{{ $lang == 'ar' ? 'rtl' : 'ltr' }}">
     <!-- start nav -->
     @include('frontend::includes.nav')
     <!-- end nav -->

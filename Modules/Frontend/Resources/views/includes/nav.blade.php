@@ -18,7 +18,7 @@
                                 <a href="{{ route('frontend.locale', 'ar') }}">AR</a>
                             @endif
                         </div>
-                        <form action="/contact.html" class="search-form">
+                        {{-- <form action="/contact.html" class="search-form">
                             <img src="{{ asset('frontend/images/icons/search') }}-normal.svg" alt="search-icon"
                                 class="search-icon" />
                             <div class="search-input">
@@ -28,7 +28,7 @@
                                         alt="search-icon" />
                                 </button>
                             </div>
-                        </form>
+                        </form> --}}
                     </div>
                 </div>
             </div>

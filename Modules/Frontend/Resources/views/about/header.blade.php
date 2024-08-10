@@ -5,9 +5,9 @@
                 <!-- start brodcuramb -->
                 <nav style="--bs-breadcrumb-divider: '>'" aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item"><a href="#">@lang('Home')</a></li>
                         <li class="breadcrumb-item active" aria-current="page">
-                            About Us
+                            @lang('About Us')
                         </li>
                     </ol>
                 </nav>
@@ -15,7 +15,7 @@
                 <!-- start title page -->
                 <h1
                     class="custom-h1 text-center mt-0 flex-grow-1 d-flex align-items-center justify-content-center pb-lg-5">
-                    About Us
+                    @lang('About Us')
                 </h1>
             </div>
         </div>

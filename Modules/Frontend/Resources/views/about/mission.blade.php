@@ -8,7 +8,7 @@
             <div class="col-12">
                 <div class="card py-4">
                     <!-- start title -->
-                    <h2 class="border-red">“Our Mission + Vision”</h2>
+                    <h2 class="border-red">“@lang('Our Mission + Vision')”</h2>
                     <p>
                         {!! Settings::locale($lang)->get('our_mission') !!}
                     </p>

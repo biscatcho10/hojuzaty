@@ -45,7 +45,7 @@ class NewsDatabaseSeeder extends Seeder
         foreach ($news as $value) {
             $news = News::create($value);
             // add image
-            $news->addMedia(__DIR__ . '/images/slider-' . rand(1, 4) . '.jpg')
+            $news->addMedia(__DIR__ . '/images/slider-' . rand(1, 2) . '.jpg')
                 ->preservingOriginal()
                 ->toMediaCollection('images');
         }

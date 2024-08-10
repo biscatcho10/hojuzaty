@@ -4,8 +4,8 @@
             <!-- start title -->
             <div class="col-12">
                 <div class="title">
-                    <h2>Related Blogs</h2>
-                    <p>“Explore Our Travel Stories!”</p>
+                    <h2>@lang('Related Blogs')</h2>
+                    <p>“@lang('Explore Our Travel Stories!')”</p>
                 </div>
             </div>
 

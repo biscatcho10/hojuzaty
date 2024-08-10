@@ -4,8 +4,8 @@
             <div class="col-lg-6">
                 <!-- start title -->
                 <div class="title mb-1">
-                    <h2>About Us</h2>
-                    <p class="mb-0">“Why Choose Us?”</p>
+                    <h2>@lang('About Us')</h2>
+                    <p class="mb-0">“@lang('Why Choose Us?')”</p>
                     <!-- start text -->
                     <div class="about-text">
                         <p>

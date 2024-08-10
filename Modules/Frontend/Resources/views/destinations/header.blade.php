@@ -5,15 +5,15 @@
                 <!-- start brodcuramb -->
                 <nav style="--bs-breadcrumb-divider: '>'" aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item"><a href="{{ route('home') }}">@lang('Home')</a></li>
                         <li class="breadcrumb-item active" aria-current="page">
-                            Destinations
+                            @lang('Destinations')
                         </li>
                     </ol>
                 </nav>
 
                 <!-- start title page -->
-                <h1>A Journey Of Dreams Awaits You With Hojuzaty</h1>
+                <h1>@lang('A Journey Of Dreams Awaits You With Hojuzaty')</h1>
             </div>
         </div>
     </div>
