@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Session;
 use App\Enums\NotificationTypesEnum;
 use App\Services\NotificationsService;
 use Modules\Accounts\Entities\Admin;
+use Modules\Sliders\Entities\Slider;
 
 class FrontendController extends Controller
 {
@@ -34,6 +35,7 @@ class FrontendController extends Controller
     {
         $lang = Session::get('front_locale');
         $news = News::get();
+        $sliders = Slider::get();
         return view('frontend::index', get_defined_vars());
     }
 

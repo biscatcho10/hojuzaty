@@ -67,7 +67,7 @@ class Destination extends Model implements HasMedia
      */
     public function getGalleriesAttribute()
     {
-        return $this->getMedia('gallery');
+        return $this->getMediaResource('gallery');
     }
 
 

@@ -9,6 +9,7 @@ use Modules\News\Database\Seeders\NewsDatabaseSeeder;
 use Modules\Partners\Database\Seeders\PartnersDatabaseSeeder;
 use Modules\Settings\Database\Seeders\ContactusTableSeeder;
 use Modules\Settings\Database\Seeders\SettingsDatabaseSeeder;
+use Modules\Sliders\Database\Seeders\SlidersDatabaseSeeder;
 
 class DummyDataSeeder extends Seeder
 {
@@ -26,5 +27,6 @@ class DummyDataSeeder extends Seeder
         $this->call(ContactusTableSeeder::class);
         $this->call(PartnersDatabaseSeeder::class);
         $this->call(DestinationsDatabaseSeeder::class);
+        $this->call(SlidersDatabaseSeeder::class);
     }
 }

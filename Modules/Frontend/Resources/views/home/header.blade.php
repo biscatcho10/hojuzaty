@@ -3,9 +3,9 @@
     <div class="header-slider-bg">
         <div class="slider swiper w-100">
             <div class="swiper-wrapper">
-                @forelse ($destinations as $destination)
+                @forelse ($sliders as $slider)
                     <div class="swiper-slide">
-                        <img src="{{ $destination->getImage() }}" alt="logo" />
+                        <img src="{{ $slider->getImage() }}" alt="logo" />
                     </div>
                 @empty
                 @endforelse
@@ -21,15 +21,15 @@
                     <div class="header-slider-text">
                         <div class="slider swiper w-100">
                             <div class="swiper-wrapper">
-                                @forelse ($destinations as $destination)
+                                @forelse ($sliders as $slider)
                                     <!-- singl slide -->
                                     <div class="swiper-slide">
                                         <div class="position-relative overflow-hidden">
-                                            <h1 data-swiper-parallax-y="-100">{{ $destination->name }}</h1>
+                                            <h1 data-swiper-parallax-y="-100">{{ $slider->title }}</h1>
                                         </div>
-                                        <p>{!! $destination->description !!}</p>
-                                        <a href="{{ route('destination.details', $destination) }}"
-                                            class="btn-primary">@lang('Explore Now')</a>
+                                        <p>{!! $slider->content !!}</p>
+                                        {{-- <a href="{{ route('destination.details', $slider) }}"
+                                            class="btn-primary">@lang('Explore Now')</a> --}}
                                     </div>
                                 @empty
                                 @endforelse
@@ -42,10 +42,10 @@
                     <div class="header-slider-img">
                         <div class="slider swiper swiper-css-common">
                             <div class="swiper-wrapper">
-                                @forelse ($destinations as $destination)
+                                @forelse ($sliders as $slider)
                                     <!-- singl slide -->
                                     <div class="swiper-slide">
-                                        <img src="{{ $destination->getImage() }}" alt="{{ $destination->name }}"/>
+                                        <img src="{{ $slider->getImage() }}" alt="{{ $slider->title }}"/>
                                     </div>
                                 @empty
                                 @endforelse

@@ -16,28 +16,29 @@ class SlidersDatabaseSeeder extends Seeder
     {
         $sliders = [
             [
-                "title:en" => "Child Protection and Development",
-                "title:ar" => "الحماية الأطفال والتنمية",
-                "content:en" => "A.P.E. launched a literacy program in 1989 in a small apartment in Moqattam. This small beginning has grown to include a nursery",
-                "content:ar" => "قامت جمعية حماية البيئة من التلوث A.P.E بإطلاق برنامج محو الأمية في عام 1989 وكانت البداية في شقة صغيرة في حي المقطم.",
+                "title:en" => "Slider 1",
+                "title:ar" => "السلايدر 1",
+                "content:en" => "Slider 1 content",
+                "content:ar" => "وصف السلايدر 1",
             ],
             [
-                'title:en' => 'Child Protection and Development',
-                'title:ar' => 'الحماية الأطفال والتنمية',
-                'content:en' => 'A.P.E. launched a literacy program in 1989 in a small apartment in Moqattam. This small beginning has grown to include a nursery',
-                'content:ar' => 'قامت جمعية حماية البيئة من التلوث A.P.E بإطلاق برنامج محو الأمية في عام 1989 وكانت البداية في شقة صغيرة في حي المقطم.',
+                "title:en" => "Slider 2",
+                "title:ar" => "السلايدر 2",
+                "content:en" => "Slider 2 content",
+                "content:ar" => "وصف السلايدر 2",
             ],
             [
-                'title:en' => 'Child Protection and Development',
-                'title:ar' => 'الحماية الأطفال والتنمية',
-                'content:en' => 'A.P.E. launched a literacy program in 1989 in a small apartment in Moqattam. This small beginning has grown to include a nursery',
-                'content:ar' => 'قامت جمعية حماية البيئة من التلوث A.P.E بإطلاق برنامج محو الأمية في عام 1989 وكانت البداية في شقة صغيرة في حي المقطم.',
+                "title:en" => "Slider 3",
+                "title:ar" => "السلايدر 3",
+                "content:en" => "Slider 3 content",
+                "content:ar" => "وصف السلايدر 3",
             ],
             [
-                'title:en' => 'Child Protection and Development',
-                'title:ar' => 'الحماية الأطفال والتنمية',
-                'content:en' => 'A.P.E. launched a literacy program in 1989 in a small apartment in Moqattam. This small beginning has grown to include a nursery',
-                'content:ar' => 'قامت جمعية حماية البيئة من التلوث A.P.E بإطلاق برنامج محو الأمية في عام 1989 وكانت البداية في شقة صغيرة في حي المقطم.',
+                "title:en" => "Slider 4",
+                "title:ar" => "السلايدر 4",
+                "content:en" => "Slider 4 content",
+                "content:ar" => "وصف السلايدر 4",
+
             ]
         ];
 
