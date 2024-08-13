@@ -40,7 +40,7 @@
                                 @forelse ($galleries as $gallery)
                                     <!-- singl slide -->
                                     <div class="swiper-slide ratio ratio-4x3">
-                                        <img src="{{ $gallery->getUrl() }}" class="cover" alt="gallery" />
+                                        <img src="{{ $gallery['url'] }}" class="cover" alt="gallery" />
                                     </div>
                                 @empty
                                 @endforelse
